@@ -17,7 +17,7 @@
         <div style="text-align:center;"><img src="resources/logo.png" style="width:100px;margin-top: 170px;"></div>
         <div style="text-align:center;font-size:50px;font-weight:700;color:#ffffff;padding: 20px;">VTuberの音声ボタンコレクション<br>（VTuber按钮集合）</div>
     <div style="text-align:center;"><button style="padding:15px 120px;margin:7px;font-size:45px;font-weight:700;color:#ffffff;border: 0px;border-radius:30px;background-image: linear-gradient(to bottom right, #77efff,#4964ff);" onclick="holocontroler()">Hololive/ホロライブ</button></div>
-    <div id="holobutton" style="display: none;margin-top: 50px;margin-bottom: 50px;margin-top: 50px;margin-bottom: 50px;">
+    <div id="holobutton" style="display: none;margin-top: 15px;margin-bottom: 25px;">
         <!--<div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #f980ff,);" onclick="window.open('https://aquaminato.moe')">夸按钮（湊あくあ）</button></div>
         <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #347ab6,);" onclick="window.open('https://meamea.moe')">Mea按钮（神楽めあ）</button></div>-->
         <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #ff9999,#ff6666);" onclick="window.open('https://ookamimio.org')">狼按钮（大神ミオ）</button></div>
@@ -32,22 +32,22 @@
         <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #c2838f,#C16375);" onclick="window.open('http://www.ahoybutton.art')">船长按钮（宝鐘マリン）</button></div>
     </div>
     <div style="text-align:center;"><button style="padding:15px 120px;margin:7px;font-size:45px;font-weight:700;color:#ffffff;border: 0px;border-radius:30px;background-image: linear-gradient(to bottom right, #ff5858,#6a67ff);" onclick="nijisanjicontroler()">彩虹社/にじさんじ</button></div>
-    <div id="nijisanjibutton" style="display: none;margin-top: 50px;margin-bottom: 50px;">
+    <div id="nijisanjibutton" style="display: none;margin-top: 15px;margin-bottom: 25px;">
         <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #f7ce55,#fec107);" onclick="window.open('https://nucleareal.jp/OtogibaraEra/voice.html')">御伽原江良按钮（御伽原江良）</button></div>
         <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #664d41,#5b3b2c);" onclick="window.open('https://fumino-tamaki-button.firebaseapp.com/')">文野環按钮（文野環）</button></div>
         <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #ffe2e6,#ffb6c1);" onclick="window.open('http://suzuhara.starfree.jp')">铃原按钮（鈴原るる）</button></div>
     </div>
     <div style="text-align:center;"><button style="padding:15px 120px;margin:7px;font-size:45px;font-weight:700;color:#ffffff;border: 0px;border-radius:30px;background-image: linear-gradient(to bottom right, #cfff4b,#ffa856);" onclick="vividcontroler()">ViViD/ビビッド</button></div>
-    <div id="vividbutton" style="display: none;margin-top: 50px;margin-bottom: 50px;">
+    <div id="vividbutton" style="display: none;margin-top: 15px;margin-bottom: 25px;">
         <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #fae8ed,#f9d1dc);" onclick="window.open('https://bell.colter.top')">Bell按钮（猫芒ベル）</button></div>
     </div>
     <div style="text-align:center;"><button style="padding:15px 120px;margin:7px;font-size:45px;font-weight:700;color:#ffffff;border: 0px;border-radius:30px;background-image: linear-gradient(to bottom right, #ffafaf,#ffb273);" onclick="personalcontroler()">个人势/個人勢</button></div>
-    <div id="personalbutton" style="display: none;margin-top: 50px;margin-bottom: 50px;">
+    <div id="personalbutton" style="display: none;margin-top: 15px;margin-bottom: 25px;">
         <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #dde4ec,#c8dcf0);" onclick="window.open('https://nanakagura.moe')">狗妈按钮（神楽七奈）[修理中]</button></div>
         <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #bfadd1,#b693d5);" onclick="window.open('https://nyakoshofuku.org')">福按钮（招福にゃこ）[進行中の作業]</button></div>
     </div>
-        <footer style="text-align:center;color:#777777;">Powered by Voice Button United Studio</footer>
-        <footer style="text-align:center;color:#777777;">Thanks：自闭的一只懒猫</footer>
+        <footer class="footer">Powered by Voice Button United Studio</footer>
+        <footer class="footer">Thanks：自闭的一只懒猫</footer>
     </body>
     <style>
         .default{
@@ -60,6 +60,11 @@
             border-radius:30px;
             animation: default 5s;
             -webkit-animation: default 5s;
+        }
+        .footer{
+            text-align:center;
+            color:#777777;
+            font-size: 40px;
         }
         @keyframes default{
             from {style: none;}
