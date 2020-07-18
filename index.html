@@ -1,106 +1,159 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>VTuberの音声ボタンコレクション</title>
-        <link rel="icon" href="resources/logo.png">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168800369-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
 
-            gtag('config', 'UA-168800369-1');
-        </script>
-    </head>
-    <body style="min-height:100vh;background:#161616;">
-        <div style="text-align:center;"><img src="resources/logo.png" style="width:100px;margin-top: 170px;"></div>
-        <div style="text-align:center;font-size:50px;font-weight:700;color:#ffffff;padding: 20px;">VTuberの音声ボタンコレクション<br>（VTuber按钮集合）</div>
-    <div style="text-align:center;"><button style="padding:15px 120px;margin:7px;font-size:45px;font-weight:700;color:#ffffff;border: 0px;border-radius:30px;background-image: linear-gradient(to bottom right, #77efff,#4964ff);" onclick="holocontroler()">Hololive/ホロライブ</button></div>
-    <div id="holobutton" style="display: none;margin-top: 15px;margin-bottom: 25px;">
-        <!--<div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #f980ff,);" onclick="window.open('https://aquaminato.moe')">夸按钮（湊あくあ）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #347ab6,);" onclick="window.open('https://meamea.moe')">Mea按钮（神楽めあ）</button></div>-->
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #ff9999,#ff6666);" onclick="window.open('https://ookamimio.org')">狼按钮（大神ミオ）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #65dbff,#00c4ff);" onclick="window.open('https://fubuki.moe')">狐按钮（白上フブキ）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #9dadf0,#728bf2);" onclick="window.open('https://peko.top')">Peko按钮（兎田ぺこら）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #fdce95,#ffbc6b);" onclick="window.open('https://natsuiromatsuri.moe')">祭按钮（夏色まつり）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #ffa0c0,#ff6f9f);" onclick="window.open('https://nakiriayame.moe')">余按钮（百鬼あやめ）[進行中の作業]</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #959dbb,#6375bd);" onclick="window.open('https://suisei.moe')">星按钮（星街すいせい）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #635e68,#594a67);" onclick="window.open('https://towa.live')">Towa按钮（常闇トワ）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #e6ceb1,#f1c48d);" onclick="window.open('https://korone.icu')">狗按钮（戌神ころね）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #ffb6db,#ff97cb);" onclick="window.open('http://sepeach.com')">桃按钮（黒桃影）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #c2838f,#C16375);" onclick="window.open('http://www.ahoybutton.art')">船长按钮（宝鐘マリン）</button></div>
-    </div>
-    <div style="text-align:center;"><button style="padding:15px 120px;margin:7px;font-size:45px;font-weight:700;color:#ffffff;border: 0px;border-radius:30px;background-image: linear-gradient(to bottom right, #ff5858,#6a67ff);" onclick="nijisanjicontroler()">彩虹社/にじさんじ</button></div>
-    <div id="nijisanjibutton" style="display: none;margin-top: 15px;margin-bottom: 25px;">
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #f7ce55,#fec107);" onclick="window.open('https://nucleareal.jp/OtogibaraEra/voice.html')">御伽原江良按钮（御伽原江良）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #664d41,#5b3b2c);" onclick="window.open('https://fumino-tamaki-button.firebaseapp.com/')">文野環按钮（文野環）</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #ffe2e6,#ffb6c1);" onclick="window.open('http://suzuhara.starfree.jp')">铃原按钮（鈴原るる）</button></div>
-    </div>
-    <div style="text-align:center;"><button style="padding:15px 120px;margin:7px;font-size:45px;font-weight:700;color:#ffffff;border: 0px;border-radius:30px;background-image: linear-gradient(to bottom right, #cfff4b,#ffa856);" onclick="vividcontroler()">ViViD/ビビッド</button></div>
-    <div id="vividbutton" style="display: none;margin-top: 15px;margin-bottom: 25px;">
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #fae8ed,#f9d1dc);" onclick="window.open('https://bell.colter.top')">Bell按钮（猫芒ベル）</button></div>
-    </div>
-    <div style="text-align:center;"><button style="padding:15px 120px;margin:7px;font-size:45px;font-weight:700;color:#ffffff;border: 0px;border-radius:30px;background-image: linear-gradient(to bottom right, #ffafaf,#ffb273);" onclick="personalcontroler()">个人势/個人勢</button></div>
-    <div id="personalbutton" style="display: none;margin-top: 15px;margin-bottom: 25px;">
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #dde4ec,#c8dcf0);" onclick="window.open('https://nanakagura.moe')">狗妈按钮（神楽七奈）[修理中]</button></div>
-        <div style="text-align:center;"><button class="default" style="background-image: linear-gradient(to bottom right, #bfadd1,#b693d5);" onclick="window.open('https://nyakoshofuku.org')">福按钮（招福にゃこ）[進行中の作業]</button></div>
-    </div>
-        
-        <footer class="footer">按钮按照获得许可的时间顺序排列<br>ボタンは許可が得られた時間順に配置されています</footer>
-        <footer class="footer">本网站仅用于收集网址，网址指向的任何网站内容都与本网站无关<br>このWebサイトはURLの収集にのみ使用され、URLが指すWebサイトのコンテンツはこのWebサイトに関連していません</footer>
-        <footer class="footer">Powered by Voice Button United Studio</footer>
-        <footer class="footer">Thanks：自闭的一只懒猫</footer>
-    </body>
-    <style>
-        .default{
-            padding:15px 120px;
-            margin:7px;
-            font-size:35px;
-            font-weight:700;
-            color:#ffffff;
-            border: 0px;
-            border-radius:30px;
-        }
-        .footer{
-            text-align:center;
-            color:#777777;
-            font-size: 32px;
-        }
-    </style>
+<head>
+    <title>VTuberの音声ボタンコレクション</title>
+    <link rel="icon" href="resources/logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168800369-1"></script>
     <script>
-        function holocontroler(){
-        var btn = document.getElementById('holobutton');
-            if(btn.style.display == "none"){
-                btn.style.display = "";
-            }else{
-                btn.style.display = "none";
-            }
-        }
-        function nijisanjicontroler(){
-        var btn = document.getElementById('nijisanjibutton');
-            if(btn.style.display == "none"){
-                btn.style.display = "";
-            }else{
-                btn.style.display = "none";
-            }
-        }
-        function personalcontroler(){
-        var btn = document.getElementById('personalbutton');
-            if(btn.style.display == "none"){
-                btn.style.display = "";
-            }else{
-                btn.style.display = "none";
-            }
-        }
-        
-        function vividcontroler(){
-        var btn = document.getElementById('vividbutton');
-            if(btn.style.display == "none"){
-                btn.style.display = "";
-            }else{
-                btn.style.display = "none";
-            }
-        }
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-168800369-1');
     </script>
+    <script>
+        $(document).ready(function () {
+            $("#holo").click(function () {
+                $(".holo").slideToggle();
+            });
+            $("#nijisanji").click(function () {
+                $(".nijisanji").slideToggle();
+            });
+            $("#vivid").click(function () {
+                $(".vivid").slideToggle();
+            });
+            $("#personal").click(function () {
+                $(".personal").slideToggle();
+            })
+        })
+    </script>
+</head>
+
+<body style="min-height:100vh;background:#161616;">
+    <div><img src="resources/logo.png" style="width:100px;margin-top: 170px;"></div>
+    <div style="text-align:center;font-size:50px;font-weight:700;color:#ffffff;padding: 20px;">
+        VTuberの音声ボタンコレクション<br>（VTuber按钮集合）</div>
+
+
+
+    <div><button id="holo" class="main"
+            style="background-image: linear-gradient(to bottom right, #77efff,#4964ff);">Hololive/ホロライブ</button></div>
+    <ul class="holo menu" style="margin-top: 15px;margin-bottom: 25px;display: none;">
+        <!--<li><a target="_blank" href="https://aquaminato.moe"><button class="default" style="background-image: linear-gradient(to bottom right, #f980ff,);">夸按钮（湊あくあ）</button></a></li>
+        <li><a target="_blank" href="https://meamea.moe"><button class="default" style="background-image: linear-gradient(to bottom right, #347ab6,);">Mea按钮（神楽めあ）</button></a></li>-->
+        <li><a target="_blank" href="https://ookamimio.org"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #ff9999,#ff6666);">狼按钮（大神ミオ）</button></a>
+        </li>
+        <li><a target="_blank" href="https://fubuki.moe"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #65dbff,#00c4ff);">狐按钮（白上フブキ）</button></a>
+        </li>
+        <li><a target="_blank" href="https://peko.top"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #9dadf0,#728bf2);">Peko按钮（兎田ぺこら）</button></a>
+        </li>
+        <li><a target="_blank" href="https://natsuiromatsuri.moe"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #fdce95,#ffbc6b);">祭按钮（夏色まつり）</button></a>
+        </li>
+        <li><a target="_blank" href="https://nakiriayame.moe"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #ffa0c0,#ff6f9f);">余按钮（百鬼あやめ）[進行中の作業]</button></a>
+        </li>
+        <li><a target="_blank" href="https://suisei.moe"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #959dbb,#6375bd);">星按钮（星街すいせい）</button></a>
+        </li>
+        <li><a target="_blank" href="https://towa.live"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #635e68,#594a67);">Towa按钮（常闇トワ）</button></a>
+        </li>
+        <li><a target="_blank" href="https://korone.icu"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #e6ceb1,#f1c48d);">狗按钮（戌神ころね）</button></a>
+        </li>
+        <li><a target="_blank" href="http://sepeach.com"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #ffb6db,#ff97cb);">桃按钮（黒桃影）</button></a>
+        </li>
+        <li><a target="_blank" href="http://www.ahoybutton.art"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #c2838f,#C16375);">船长按钮（宝鐘マリン）</button></a>
+        </li>
+        <li><a target="_blank" href="http://artia.moe"><button class="default"
+            style="background-image: linear-gradient(to bottom right, #854e85,#800080);">阿媂娅按钮（アティア）</button></a>
+        </li>
+    </ul>
+
+
+    <div><button id="nijisanji" class="main"
+            style="background-image: linear-gradient(to bottom right, #ff5858,#6a67ff);">彩虹社/にじさんじ</button></div>
+    <ul class="nijisanji menu" style="margin-top: 15px;margin-bottom: 25px;display: none;">
+        <li><a target="_blank" href="https://nucleareal.jp/OtogibaraEra/voice.html"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #f7ce55,#fec107);">御伽原江良按钮（御伽原江良）</button></a>
+        </li>
+        <li><a target="_blank" href="https://fumino-tamaki-button.firebaseapp.com/"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #664d41,#5b3b2c);">文野環按钮（文野環）</button></a>
+        </li>
+        <li><a target="_blank" href="http://suzuhara.starfree.jp"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #ffe2e6,#ffb6c1);">铃原按钮（鈴原るる）</button></a>
+        </li>
+    </ul>
+
+
+
+    <div><button id="vivid" class="main"
+            style="background-image: linear-gradient(to bottom right, #cfff4b,#ffa856);">ViViD/ビビッド</button></div>
+    <ul class="vivid menu" style="margin-top: 15px;margin-bottom: 25px;display: none;">
+        <li><a target="_blank" href="https://bell.colter.top"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #fae8ed,#f9d1dc);">Bell按钮（猫芒ベル）</button></a>
+        </li>
+    </ul>
+
+
+
+    <div><button id="personal" class="main"
+            style="background-image: linear-gradient(to bottom right, #ffafaf,#ffb273);">个人势/個人勢</button></div>
+    <ul class="personal menu" style="margin-top: 15px;margin-bottom: 25px;display: none;">
+        <li><a target="_blank" href="https://nanakagura.moe"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #dde4ec,#c8dcf0);">狗妈按钮（神楽七奈）[修理中]</button></a>
+        </li>
+        <li><a target="_blank" href="https://nyakoshofuku.org"><button class="default"
+                    style="background-image: linear-gradient(to bottom right, #bfadd1,#b693d5);">福按钮（招福にゃこ）[進行中の作業]</button></a>
+        </li>
+    </ul>
+
+
+
+    <footer class="footer">
+        按钮按照获得许可的时间顺序排列<br>ボタンは許可が得られた時間順に配置されています<br>本网站仅用于收集网址，网址指向的任何网站内容都与本网站无关<br>このWebサイトはURLの収集にのみ使用され、URLが指すWebサイトのコンテンツはこのWebサイトに関連していません<br>Powered
+        by Voice Button United Studio<br>Thanks：自闭的一只懒猫 & 派兹</footer>
+</body>
+<style>
+    * {
+        text-align: center;
+    }
+
+    .default {
+        padding: 15px 120px;
+        margin: 7px;
+        font-size: 35px;
+        font-weight: 700;
+        color: #ffffff;
+        border: 0px;
+        border-radius: 30px;
+        animation: default 5s;
+        -webkit-animation: default 5s;
+    }
+
+    .footer {
+        text-align: center;
+        color: #777777;
+        font-size: 23px;
+    }
+
+    .main {
+        padding: 15px 120px;
+        margin: 7px;
+        font-size: 45px;
+        font-weight: 700;
+        color: #ffffff;
+        border: 0px;
+        border-radius: 30px;
+    }
+</style>
+
 </html>
