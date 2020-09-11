@@ -24,12 +24,12 @@
         const HOLOLIVE = [{ //Hololive
             "name": "夸按钮(湊あくあ)",
             "color": "f980ff",
-            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f332.svg",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2693.svg",
             "src": "https://aquaminato.moe",
         }, {
             "name": "Mea按钮(神楽めあ)",
             "color": "618db4",
-            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f33d.svg",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f365.svg",
             "src": "https://meamea.moe",
         },{
             "name": "狼按钮(大神ミオ)",
@@ -119,21 +119,21 @@
         }, {
             "name": "昴按钮(大空スバル)",
             "color": "87e3ea",
-            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2764.svg",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f691.svg",
             "src": "https://oozorasubaru.com",
         }, ];
         const NIJISANJI = [{ //彩虹社
-                "name": "御伽原江良按钮",
+                "name": "御伽原江良按钮(御伽原江良)",
                 "color": "FEC107",
                 "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3f0.svg",
                 "src": "https://nucleareal.jp/OtogibaraEra/voice.html",
             }, {
-                "name": "文野環按钮",
+                "name": "文野環按钮(文野環)",
                 "color": "5B3B2C",
                 "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f41f.svg",
                 "src": "https://fumino-tamaki-button.firebaseapp.com/",
             }, {
-                "name": "铃原按钮",
+                "name": "铃原按钮(鈴原るる)",
                 "color": "FFB6C1",
                 "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3a8.svg",
                 "src": "http://suzuhara.starfree.jp",
@@ -146,48 +146,48 @@
 
         ];
         const VIVID = [{ //ViViD
-            "name": "Bell按钮",
+            "name": "Bell按钮(猫芒ベル)",
             "color": "FFAACB",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f514.svg",
             "src": "https://www.vividbtn.top/bell",
         }, {
-            "name": "Memo按钮",
+            "name": "Memo按钮(泡沫メモリ)",
             "color": "D18EE9",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f47b.svg",
             "src": "https://www.vividbtn.top/memory",
         }, {
-            "name": "Lily按钮",
-            "color": "D18EE9",
+            "name": "Lily按钮(白百合リリィ)",
+            "color": "B3E5FC",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f36e.svg",
             "src": "https://www.vividbtn.top/lily",
         }, {
-            "name": "Elena按钮",
+            "name": "Elena按钮(勇凪エレナ)",
             "color": "e69d00",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f36f.svg",
             "src": "https://www.vividbtn.top/elena",
         }, {
             "name": "Anko按钮(二和餅あんこ)",
             "color": "79A3E8",
-            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f36f.svg",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f361.svg",
             "src": "https://www.vividbtn.top/anko",
         }, {
             "name": "Lock按钮(クロノロク)",
             "color": "FF5858",
-            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f36f.svg",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f512.svg",
             "src": "https://www.vividbtn.top/lock",
         }, ];
         const PERSONAL = [{ //个人势
-            "name": "狗妈按钮",
+            "name": "狗妈按钮(神楽七奈)",
             "color": "C8DCF0",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f336.svg",
-            "src": "http://button.kaguranana.net",
+            "src": "http://kaguranana.moe",
         }, {
-            "name": "福按钮[建造中]",
+            "name": "福按钮(招福にゃこ)",
             "color": "B693D5",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f37a.svg",
             "src": "https://nyakoshofuku.org",
         }, {
-            "name": "眠按钮",
+            "name": "眠按钮(眠目直木)",
             "color": "F7F6DA",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f408.svg",
             "src": "https://mmzm.moe",
@@ -554,9 +554,9 @@
 </head>
 
 <body onload="init()">
-    <button id="i18n"><svg style="width:24px;height:24px" color="#5F83AD" viewBox="0 0 24 24">
+    <!--<button id="i18n"><svg style="width:24px;height:24px" color="#5F83AD" viewBox="0 0 24 24">
         <path fill="currentColor" d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z" />
-    </svg></button>
+    </svg></button>-->
     <div class="wrapper">
         <div class="banner">
             <!-- <img src="https://vbup.org/vbup.svg" width="120"> -->
