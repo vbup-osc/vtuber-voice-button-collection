@@ -138,7 +138,7 @@
                 "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3a8.svg",
                 "src": "http://suzuhara.starfree.jp",
             }, {
-                "name": "笹按钮",
+                "name": "笹按钮(笹木咲)",
                 "color": "fc05ff",
                 "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f38b.svg",
                 "src": "http://sasa-kids.com",
@@ -205,7 +205,7 @@
         }
 
         function boxCreate() { //生成背景
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < HOLOLIVE.length + NIJISANJI.length + VIVID.length + PERSONAL.length;i++) {
                 var box = document.createElement("div");
                 box.className = "box";
                 box.style.left = Math.ceil(Math.random() * 60) + "%";
@@ -575,7 +575,7 @@
 
 
                         <div class="inside" id="hololive">
-                            <p>Hololive</p>
+                            <p>Hololive/ホロライブ</p>
                             <!-- 按钮会生成在这里 -->
                         </div>
                     </div>
@@ -583,7 +583,7 @@
                 <div class="col">
                     <div class="cate">
                         <div class="inside" id="nijisanji">
-                            <p>彩虹社</p>
+                            <p>彩虹社/にじさんじ</p>
                             <!-- 按钮会生成在这里 -->
                         </div>
                     </div>
@@ -591,7 +591,7 @@
                 <div class="col">
                     <div class="cate">
                         <div class="inside" id="vivid">
-                            <p>ViViD</p>
+                            <p>ViViD/ビビッド</p>
                             <!-- 按钮会生成在这里 -->
                         </div>
                     </div>
@@ -599,7 +599,7 @@
                 <div class="col">
                     <div class="cate">
                         <div class="inside" id="personal">
-                            <p>个人势</p>
+                            <p>个人势/個人勢</p>
                             <!-- 按钮会生成在这里 -->
                         </div>
                     </div>

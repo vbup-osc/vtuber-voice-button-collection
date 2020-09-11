@@ -1,4 +1,4 @@
-var cacheName = 'VBUP';
+var cacheName = 'VBUP-V1.1'; //版本号
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(cacheName)
@@ -12,26 +12,42 @@ self.addEventListener('install', event => {
         ]))
     );
 });
-
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request)
-        .then(function(response) {
-            if (response) {
-                return response;
-            }
-            var requestToCache = event.request.clone(); //          
-            return fetch(requestToCache).then(
-                function(response) {
-                    if (!response || response.status !== 200) {
-                        return response;
-                    }
-                    var responseToCache = response.clone();
-                    caches.open(cacheName)
-                        .then(function(cache) {
-                            cache.put(requestToCache, responseToCache);
-                        });
+self.addEventListener('fetch', function(e) {
+    e.respondWith(
+        caches.match(e.request).then(function(r) {
+            console.log('[Service Worker] Fetching resource: ' + e.request.url);
+            return r || fetch(e.request).then(function(response) {
+                return caches.open(cacheName).then(function(cache) {
+                    console.log('[Service Worker] Caching new resource: ' + e.request.url);
+                    cache.put(e.request, response.clone());
                     return response;
-                })
-        }))
+                });
+            });
+        })
+    );
+});
+self.addEventListener('install', function(event) {
+    event.waitUntil(self.skipWaiting());
+});
+
+self.addEventListener('activate', function(event) {
+    event.waitUntil(
+        Promise.all([
+            // 更新客户端
+            self.clients.claim(),
+
+            // 清理旧版本
+            caches.keys().then(function(cacheList) {
+                return Promise.all(
+                    cacheList.map(function(cacheName) {
+                        console.log(cacheList);
+                        if (cacheName !== cacheList[0]) {
+                            console.log(cacheList);
+                            return caches.delete(cacheList[0]);
+                        }
+                    })
+                );
+            })
+        ])
+    );
 });
