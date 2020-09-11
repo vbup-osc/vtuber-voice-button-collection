@@ -13,92 +13,114 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="images/logo/logo.png">
     <title>VTuberの音声ボタンコレクション</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168800369-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-168800369-1');
+    </script>
     <script>
         const HOLOLIVE = [{ //Hololive
-            "name": "狼按钮",
+            "name": "夸按钮(湊あくあ)",
+            "color": "f980ff",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f332.svg",
+            "src": "https://aquaminato.moe",
+        }, {
+            "name": "Mea按钮(神楽めあ)",
+            "color": "618db4",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f33d.svg",
+            "src": "https://meamea.moe",
+        },{
+            "name": "狼按钮(大神ミオ)",
             "color": "fc7374",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f332.svg",
             "src": "https://ookamimio.org",
-        }, {
-            "name": "狐按钮",
+        },{
+            "name": "狐按钮(白上フブキ)",
             "color": "64B5F6",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f33d.svg",
             "src": "https://fubuki.moe",
         }, {
-            "name": "樱按钮",
+            "name": "樱按钮(さくらみこ)",
             "color": "FF84AB",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f338.svg",
             "src": "https://sakuramiko.org",
         }, {
-            "name": "Peko按钮",
+            "name": "Peko按钮(兎田ぺこら)",
             "color": "849AF5",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f955.svg",
             "src": "https://peko.top",
         }, {
-            "name": "余按钮",
+            "name": "余按钮(百鬼あやめ)",
             "color": "FF476C",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f608.svg",
             "src": "https://nakiriayame.moe",
         }, {
-            "name": "祭按钮",
+            "name": "祭按钮(夏色まつり)",
             "color": "FFBC6B",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3ee.svg",
             "src": "https://natsuiromatsuri.moe",
         }, {
-            "name": "星按钮",
+            "name": "星按钮(星街すいせい)",
             "color": "6375BD",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2604.svg",
             "src": "https://suisei.moe",
         }, {
-            "name": "棕按钮",
+            "name": "粽按钮(潤羽るしあ)",
             "color": "88D1B9",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f98b.svg",
             "src": "https://rushia.moe",
         }, {
-            "name": "Towa按钮",
+            "name": "Towa按钮(常闇トワ)",
             "color": "816B96",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f47e.svg",
             "src": "https://towa.live",
         }, {
-            "name": "狗按钮",
+            "name": "狗按钮(戌神ころね)",
             "color": "F1C48D",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f950.svg",
             "src": "https://korone.icu",
         }, {
-            "name": "粥按钮",
+            "name": "猫按钮(猫又おかゆ)",
             "color": "B350BD",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f359.svg",
             "src": "https://okayu.icu",
         }, {
-            "name": "桃按钮",
+            "name": "桃按钮(黒桃影)",
             "color": "FF97CB",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2660.svg",
             "src": "https://sepeach.com",
         }, {
-            "name": "船长按钮",
+            "name": "船长按钮(宝鐘マリン)",
             "color": "C06375",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3f4-200d-2620-fe0f.svg",
             "src": "https://www.ahoybutton.art",
         }, {
-            "name": "阿媂娅按钮",
+            "name": "阿媂娅按钮(アティア)",
             "color": "6d00d3",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2744.svg",
             "src": "https://artia.moe",
         }, {
-            "name": "WTM按钮",
+            "name": "WTM按钮(角巻わため)",
             "color": "FDFAC1",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f40f.svg",
             "src": "https://www.watame.moe",
         }, {
-            "name": "彼方碳按钮",
+            "name": "彼方碳按钮(天音かなた)",
             "color": "7A86CD",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f4ab.svg",
             "src": "https://kanata.club",
         }, {
-            "name": "心按钮",
+            "name": "心按钮(赤井はあと)",
             "color": "ffb400",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2764.svg",
             "src": "https://haato.club",
+        }, {
+            "name": "昴按钮(大空スバル)",
+            "color": "87e3ea",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2764.svg",
+            "src": "https://oozorasubaru.com",
         }, ];
         const NIJISANJI = [{ //彩虹社
                 "name": "御伽原江良按钮",
@@ -143,6 +165,16 @@
             "color": "e69d00",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f36f.svg",
             "src": "https://www.vividbtn.top/elena",
+        }, {
+            "name": "Anko按钮(二和餅あんこ)",
+            "color": "79A3E8",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f36f.svg",
+            "src": "https://www.vividbtn.top/anko",
+        }, {
+            "name": "Lock按钮(クロノロク)",
+            "color": "FF5858",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f36f.svg",
+            "src": "https://www.vividbtn.top/lock",
         }, ];
         const PERSONAL = [{ //个人势
             "name": "狗妈按钮",
@@ -173,7 +205,7 @@
         }
 
         function boxCreate() { //生成背景
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < 10; i++) {
                 var box = document.createElement("div");
                 box.className = "box";
                 box.style.left = Math.ceil(Math.random() * 60) + "%";
@@ -472,16 +504,6 @@
         
         .inside>p {
             margin: 10px;
-        }
-        
-        @keyframes boxR {
-            from {
-                transform: rotate(0deg)
-            }
-            to {
-                transform: rotate(360deg);
-                transition: all 0.6s;
-            }
         }
         
         @keyframes enterSite {
