@@ -1,6 +1,6 @@
 {
     "name": "VTuberの音声ボタンコレクション",
-    "short_name": "VTUP",
+    "short_name": "VBUP",
     "description": "VTuber按钮集合",
     "start_url": "/",
     "display": "standalone",
