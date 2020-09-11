@@ -1,215 +1,598 @@
 <!DOCTYPE html>
+<!--
+    © 2020 VoiceButtonUnitedProject
+    Maintained by 派兹 & 寒いもみじ雪
+    Authorized under the MIT License
+-->
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#E7EFF8">
+    <link rel="manifest" href="/manifest.json">
     <title>VTuberの音声ボタンコレクション</title>
-    <link rel="icon" href="resources/logo.png">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168800369-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-168800369-1');
-    </script>
-    <script>
-        $(document).ready(function () {
-            $("#holo").click(function () {
-                $(".holo").slideToggle();
-            });
-            $("#nijisanji").click(function () {
-                $(".nijisanji").slideToggle();
-            });
-            $("#vivid").click(function () {
-                $(".vivid").slideToggle();
-            });
-            $("#personal").click(function () {
-                $(".personal").slideToggle();
-            })
-        })
+        const HOLOLIVE = [{ //Hololive
+            "name": "狼按钮",
+            "color": "fc7374",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f332.svg",
+            "src": "https://ookamimio.org",
+        }, {
+            "name": "狐按钮",
+            "color": "64B5F6",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f33d.svg",
+            "src": "https://fubuki.moe",
+        }, {
+            "name": "樱按钮",
+            "color": "FF84AB",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f338.svg",
+            "src": "https://sakuramiko.org",
+        }, {
+            "name": "Peko按钮",
+            "color": "849AF5",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f955.svg",
+            "src": "https://peko.top",
+        }, {
+            "name": "余按钮",
+            "color": "FF476C",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f608.svg",
+            "src": "https://nakiriayame.moe",
+        }, {
+            "name": "祭按钮",
+            "color": "FFBC6B",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3ee.svg",
+            "src": "https://natsuiromatsuri.moe",
+        }, {
+            "name": "星按钮",
+            "color": "6375BD",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2604.svg",
+            "src": "https://suisei.moe",
+        }, {
+            "name": "棕按钮",
+            "color": "88D1B9",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f98b.svg",
+            "src": "https://rushia.moe",
+        }, {
+            "name": "Towa按钮",
+            "color": "816B96",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f47e.svg",
+            "src": "https://towa.live",
+        }, {
+            "name": "狗按钮",
+            "color": "F1C48D",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f950.svg",
+            "src": "https://korone.icu",
+        }, {
+            "name": "粥按钮",
+            "color": "B350BD",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f359.svg",
+            "src": "https://okayu.icu",
+        }, {
+            "name": "桃按钮",
+            "color": "FF97CB",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2660.svg",
+            "src": "https://sepeach.com",
+        }, {
+            "name": "船长按钮",
+            "color": "C06375",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3f4-200d-2620-fe0f.svg",
+            "src": "https://www.ahoybutton.art",
+        }, {
+            "name": "阿媂娅按钮",
+            "color": "6d00d3",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2744.svg",
+            "src": "https://artia.moe",
+        }, {
+            "name": "WTM按钮",
+            "color": "FDFAC1",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f40f.svg",
+            "src": "https://www.watame.moe",
+        }, {
+            "name": "彼方碳按钮",
+            "color": "7A86CD",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f4ab.svg",
+            "src": "https://kanata.club",
+        }, {
+            "name": "心按钮",
+            "color": "ffb400",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2764.svg",
+            "src": "https://haato.club",
+        }, ];
+        const NIJISANJI = [{ //彩虹社
+                "name": "御伽原江良按钮",
+                "color": "FEC107",
+                "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3f0.svg",
+                "src": "https://nucleareal.jp/OtogibaraEra/voice.html",
+            }, {
+                "name": "文野環按钮",
+                "color": "5B3B2C",
+                "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f41f.svg",
+                "src": "https://fumino-tamaki-button.firebaseapp.com/",
+            }, {
+                "name": "铃原按钮",
+                "color": "FFB6C1",
+                "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3a8.svg",
+                "src": "http://suzuhara.starfree.jp",
+            }, {
+                "name": "笹按钮",
+                "color": "fc05ff",
+                "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f38b.svg",
+                "src": "http://sasa-kids.com",
+            },
+
+        ];
+        const VIVID = [{ //ViViD
+            "name": "Bell按钮",
+            "color": "FFAACB",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f514.svg",
+            "src": "https://www.vividbtn.top/bell",
+        }, {
+            "name": "Memo按钮",
+            "color": "D18EE9",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f47b.svg",
+            "src": "https://www.vividbtn.top/memory",
+        }, {
+            "name": "Lily按钮",
+            "color": "D18EE9",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f36e.svg",
+            "src": "https://www.vividbtn.top/lily",
+        }, {
+            "name": "Elena按钮",
+            "color": "e69d00",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f36f.svg",
+            "src": "https://www.vividbtn.top/elena",
+        }, ];
+        const PERSONAL = [{ //个人势
+            "name": "狗妈按钮",
+            "color": "C8DCF0",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f336.svg",
+            "src": "http://button.kaguranana.net",
+        }, {
+            "name": "福按钮[建造中]",
+            "color": "B693D5",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f37a.svg",
+            "src": "https://nyakoshofuku.org",
+        }, {
+            "name": "眠按钮",
+            "color": "F7F6DA",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f408.svg",
+            "src": "https://mmzm.moe",
+        }, ];
+
+        function init() { //初始化
+            if ('serviceWorker' in navigator) {
+
+                // register service worker
+                navigator.serviceWorker.register('/service-worker.js');
+
+            }
+            boxCreate();
+            buttonCreate();
+        }
+
+        function boxCreate() { //生成背景
+            for (var i = 0; i < 50; i++) {
+                var box = document.createElement("div");
+                box.className = "box";
+                box.style.left = Math.ceil(Math.random() * 60) + "%";
+                box.style.top = Math.ceil(Math.random() * 60) + "%";
+                var size = Math.floor(Math.random() * (400 - 120 + 1) + 120) + "px";
+                box.style.width = size;
+                box.style.height = size;
+                box.style.transform = "rotate(" + Math.ceil(Math.random() * 180) + "deg)"
+                document.body.appendChild(box);
+            }
+        }
+
+        function buttonCreate() {
+            var hololive = document.getElementById("hololive");
+            var nijisanji = document.getElementById("nijisanji");
+            var vivid = document.getElementById("vivid");
+            var personal = document.getElementById("personal");
+            buttonCreateFinal(hololive, HOLOLIVE);
+            buttonCreateFinal(nijisanji, NIJISANJI);
+            buttonCreateFinal(vivid, VIVID);
+            buttonCreateFinal(personal, PERSONAL);
+
+        }
+
+        function buttonCreateFinal(type, TYPE) {
+            for (var i = 0; i < TYPE.length; i++) {
+                var button = document.createElement("button");
+                var span = document.createElement("span");
+                var img = document.createElement("img");
+                var colorS = parseInt("0x" + TYPE[i].color);
+                var colorE = colorS - 3484928;
+                var colorT = colorE.toString(16); //得到渐变后的颜色值
+                var src = TYPE[i].src;
+                var RGB = hexToRgb(TYPE[i].color);
+                var RGBT = hexToRgb(colorT)
+                button.className = "btn";
+                button.index = i;
+                button.typer = TYPE;
+                button.onclick = function() {
+                    console.log(this.index)
+                    window.open(this.typer[this.index].src);
+                }
+                button.style.background = "linear-gradient(88.33deg, #" + TYPE[i].color + " -7.64%,#" + colorT + " 145.94%";
+                button.style.boxShadow = "-6px -6px 16px rgba(255, 255, 255, 0.6), 6px 9px 40px rgba(" + RGBT[0] + "," + RGBT[1] + "," + RGBT[2] + ", 0.44)";
+                button.style.textShadow = "-1px -1px 2px rgba(" + RGB[0] + "," + RGB[1] + "," + RGB[2] + ", 0.9), 1px 1px 2px rgba(20, 44, 73, 0.31)";
+                button.style.border = "#" + colorT;
+                span.innerText = TYPE[i].name + " ";
+                img.src = TYPE[i].icon;
+                img.width = "25";
+                button.appendChild(span);
+                button.appendChild(img);
+                type.appendChild(button);
+            }
+        }
+
+        function hexToRgb(hex) { //HEX颜色转换RGB
+            var R = hex.substr(0, 2);
+            var G = hex.substr(2, 2);
+            var B = hex.substr(4, 2);
+            R = parseInt("0x" + R);
+            G = parseInt("0x" + G);
+            B = parseInt("0x" + B);
+            return [R, G, B]
+        }
     </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
         * {
-            text-align: center;
+            /*不允许选中字符*/
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
-
-        ul {
+        
+         ::-webkit-scrollbar {
+            /*滚动条美化*/
+            width: 7px;
+            height: 7px;
+            background-color: #F5F5F5;
+        }
+        
+         ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
+            background-color: #c8c8c8;
+        }
+        
+        html {
+            animation: enterSite 1.2s;
+            /*进入动画*/
+            background: #EBF3FA;
+            margin: 0;
             padding: 0;
+            font-family: 'Noto Sans SC', sans-serif;
+            height: 90%;
         }
-
-        li {
-            list-style-type: none;
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
         }
-
-        .default {
-            padding: 15px 120px;
-            margin: 7px;
-            font-size: 35px;
-            font-weight: 700;
+        
+        .wrapper {
+            min-height: 100%;
+            margin-bottom: -50px;
+        }
+        
+        img {
+            vertical-align: middle;
+            transform: translateY(-3px);
+        }
+        
+        .cate {
+            filter: drop-shadow(72px 112px 132px rgba(119, 142, 165, 0.4));
+            font-family: Gilroy;
+            font-weight: bold;
+            font-size: 22px;
+            letter-spacing: 0.02em;
+            color: #31456A;
+            background: linear-gradient(180deg, #EBF3FA 9.85%, #DDE7F3 53.92%, #E6F0F9 100%);
+            margin: 10px;
+            padding: 20px;
+            height: min-content;
+            border-radius: 20px;
+        }
+        
+        .banner {
+            margin: 20px;
+        }
+        
+        .banner>span {
+            margin: 5px;
+            padding: 5px;
+            font-family: Gilroy;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 30px;
+            align-items: center;
+            letter-spacing: 0.02em;
+            color: #31456A;
+        }
+        
+        .grid-container {
+            /*网格容器*/
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .row::after,
+        .row::before {
+            /*行*/
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .col {
+            /*列*/
+            float: left;
+            min-width: 1px;
+        }
+        
+        .btn {
             color: #ffffff;
-            border: 0px;
-            border-radius: 30px;
-            animation: default 5s;
-            -webkit-animation: default 5s;
-        }
-    
-        .footer {
+            border: 0;
+            outline: none;
+            border-radius: 20px;
+            margin: 5px;
+            padding: 10px;
+            font-family: Gilroy;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 150%;
+            align-items: center;
             text-align: center;
-            color: #777777;
-            font-size: 1em;
-            margin-top: 2em;
-            padding: 0 1em 0 1em;
-            padding-bottom: 2em;
+            letter-spacing: 0.02em;
+            transition: 0.2s;
         }
-    
-        .main {
-            padding: 15px 120px;
-            margin: 7px;
-            font-size: 45px;
-            font-weight: 700;
-            color: #ffffff;
-            border: 0px;
-            border-radius: 30px;
+        
+        .btn:hover {
+            transform: scale(1.1, 1.1);
         }
-    </style>    
+        
+        .btn:active {
+            transform: scale(0.9, 0.9);
+        }
+        
+        .footer {
+            font-family: Gilroy;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 140%;
+            align-items: center;
+            color: #31456A;
+            height: 50px;
+            padding: 20px;
+        }
+        
+        .push {
+            height: 50px;
+        }
+        
+        #VBUP {
+            position: fixed;
+            left: 60%;
+            top: 70%;
+            font-family: Gilroy;
+            font-style: normal;
+            font-weight: bolder;
+            font-size: 200px;
+            background: linear-gradient(323.04deg, #E3EDF7 17.44%, #BAC7D5 180.89%);
+            text-shadow: -74.5174px -25.9246px 318.933px #FFFFFF, 127.673px 76.4775px 478.4px rgba(136, 165, 191, 0.48);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: -1;
+        }
+        
+        .box {
+            position: fixed;
+            width: 128.92px;
+            height: 128.92px;
+            background: #E3EDF7;
+            box-shadow: inset -9.2px -9.2px 36.8px rgba(255, 255, 255, 0.8), inset 9.2px 9.2px 27.6px rgba(136, 165, 191, 0.4);
+            border-radius: 36.8px;
+            transform: rotate(30deg);
+            animation: boxR 60s infinite linear;
+            z-index: -2;
+        }
+        
+        #i18n {
+            position: absolute;
+            align-content: center;
+            text-align: center;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            padding: 10px;
+            right: 20px;
+            top: 20px;
+            border-radius: 50px;
+            filter: drop-shadow(72px 112px 132px rgba(119, 142, 165, 0.4));
+            background: radial-gradient(315.18% 315.18% at -124.11% -101.79%, #B9CCE2 19%, #FFFFFF 77.71%), #E3EDF7;
+            box-shadow: -10px -6px 32px rgba(255, 255, 255, 0.6), 6px 5px 24px rgba(112, 139, 163, 0.28);
+        }
+        
+        #i18n:hover {
+            transform: scale(1.1, 1.1);
+        }
+        
+        #i18n:active {
+            transform: scale(0.9, 0.9);
+        }
+        
+        #logo {
+            font-family: Gilroy;
+            font-style: normal;
+            font-weight: bolder;
+            font-size: 60px;
+            color: #00ceff;
+            height: auto;
+            width: max-content;
+            display: flex;
+        }
+        
+        .logom {
+            filter: drop-shadow(72px 112px 132px rgba(119, 142, 165, 0.4));
+            margin: 4px;
+            background: #FFF;
+            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logom>span {
+            position: relative;
+            top: -25px;
+            right: -12px;
+        }
+        
+        .inside>p {
+            margin: 10px;
+        }
+        
+        @keyframes boxR {
+            from {
+                transform: rotate(0deg)
+            }
+            to {
+                transform: rotate(360deg);
+                transition: all 0.6s;
+            }
+        }
+        
+        @keyframes enterSite {
+            from {
+                filter: blur(90px);
+            }
+            to {
+                filter: blur(0px);
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            /*手机*/
+            .col {
+                width: 100%;
+            }
+            body {
+                margin: 5px;
+            }
+            .banner {
+                text-align: center;
+            }
+            #logo {
+                transform: translateX(-5px);
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+        
+        @media screen and (min-width: 700px) {
+            .col {
+                width: 50%;
+            }
+            body {
+                margin: 20px;
+            }
+        }
+        
+        @media screen and (min-width: 1000px) {
+            .col {
+                width: 25%;
+            }
+            body {
+                margin: 50px;
+            }
+        }
+    </style>
 </head>
 
-<body style="min-height:100vh;background:#161616;">
-    <div><img src="resources/logo.png" style="width:100px;margin-top: 170px;"></div>
-    <div style="text-align:center;font-size:50px;font-weight:700;color:#ffffff;padding: 20px;">
-        VTuberの音声ボタンコレクション<br>(VTuber按钮集合)</div>
+<body onload="init()">
+    <button id="i18n"><svg style="width:24px;height:24px" color="#5F83AD" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z" />
+    </svg></button>
+    <div class="wrapper">
+        <div class="banner">
+            <!-- <img src="https://vbup.org/vbup.svg" width="120"> -->
+            <div id="logo">
+                <div id="logom1" class="logom"><span>V</span></div>
+                <div id="logom2" class="logom"><span>B</span></div>
+                <div id="logom3" class="logom"><span>U</span></div>
+                <div id="logom4" class="logom"><span>P</span></div>
+            </div>
+            <span>VTuber 按钮集合</span>
+        </div>
+        <div class="grid-container">
+            <div class="row">
+                <div class="col">
+                    <div class="cate">
 
 
+                        <div class="inside" id="hololive">
+                            <p>Hololive</p>
+                            <!-- 按钮会生成在这里 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="cate">
+                        <div class="inside" id="nijisanji">
+                            <p>彩虹社</p>
+                            <!-- 按钮会生成在这里 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="cate">
+                        <div class="inside" id="vivid">
+                            <p>ViViD</p>
+                            <!-- 按钮会生成在这里 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="cate">
+                        <div class="inside" id="personal">
+                            <p>个人势</p>
+                            <!-- 按钮会生成在这里 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="push"></div>
+    </div>
+    <div id="VBUP">VBUP</div>
+    <div class="footer">
+        本网站仅用于收集网址，网址指向的任何网站内容都与本网站无关<br>
+        <!--このWebサイトはURLの収集にのみ使用され、URLが指すWebサイトのコンテンツはこのWebサイトに関連していません<br>-->
+        Powered by Voice Button United Studio<br> Thanks：自闭的一只懒猫 & 派兹 & 寒いもみじ雪 &
+        <a href="https://vercel.com/?utm_source=oruyanke"><img src="https://vtbbtn.org/resources/vercel.svg" height="15" style="filter: invert(70%);"></a><br>
+    </div>
 
-    <div><button id="holo" class="main"
-            style="background-image: linear-gradient(to bottom right, #77efff,#4964ff);">Hololive/ホロライブ</button></div>
-    <ul class="holo menu" style="margin-top: 15px;margin-bottom: 25px;display: none;">
-        <li><a target="_blank" href="https://aquaminato.moe"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #fbaaff,#f980ff);">夸按钮(湊あくあ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://meamea.moe"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #618db4,#347ab6);">Mea按钮(神楽めあ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://ookamimio.org"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #ff9999,#ff6666);">狼按钮(大神ミオ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://fubuki.moe"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #65dbff,#00c4ff);">狐按钮(白上フブキ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://peko.top"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #9dadf0,#728bf2);">Peko按钮(兎田ぺこら)</button></a>
-        </li>
-        <li><a target="_blank" href="https://sakuramiko.org"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #ff9797,#ff8989);">樱按钮(さくらみこ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://nakiriayame.moe"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #ffa0c0,#ff6f9f);">余按钮(百鬼あやめ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://natsuiromatsuri.moe"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #fdce95,#ffbc6b);">祭按钮(夏色まつり)</button></a>
-        </li>
-        <li><a target="_blank" href="https://suisei.moe"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #959dbb,#6375bd);">星按钮(星街すいせい)</button></a>
-        </li>
-        <li><a target="_blank" href="https://rushia.moe"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #88d1b9,#65cdaa);">粽按钮(潤羽るしあ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://towa.live"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #635e68,#594a67);">Towa按钮(常闇トワ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://korone.icu"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #e6ceb1,#f1c48d);">狗按钮(戌神ころね)</button></a>
-        </li>
-        <li><a target="_blank" href="https://okayu.icu"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #c17cc9,#b350bd);">猫按钮(猫又おかゆ)</button></a>
-        </li>
-        <li><a target="_blank" href="http://sepeach.com"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #ffb6db,#ff97cb);">桃按钮(黒桃影)</button></a>
-        </li>
-        <li><a target="_blank" href="http://www.ahoybutton.art"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #c2838f,#C16375);">船长按钮(宝鐘マリン)</button></a>
-        </li>
-        <li><a target="_blank" href="http://artia.moe"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #854e85,#800080);">阿媂娅按钮(アティア)</button></a>
-        </li>
-        <li><a target="_blank" href="https://www.watame.moe"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #fcfbf3,#fdfbe6);color: #777777;">WTM按钮(角巻わため)</button></a>
-        </li>
-        <li><a target="_blank" href="https://kanata.club"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #9aa2cf,#7986cc);">彼方碳按钮(天音かなた)</button></a>
-        </li>
-        <li><a target="_blank" href="https://haato.club"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #ffb134,#ff9f00);">心按钮(赤井はあと)</button></a>
-        </li>
-        <li><a target="_blank" href="https://oozorasubaru.com"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #87e3ea,#32dea7);">昴按钮(大空スバル)</button></a>
-        </li>
-    </ul>
-
-
-    <div><button id="nijisanji" class="main"
-            style="background-image: linear-gradient(to bottom right, #ff5858,#6a67ff);">彩虹社/にじさんじ</button></div>
-    <ul class="nijisanji menu" style="margin-top: 15px;margin-bottom: 25px;display: none;">
-        <li><a target="_blank" href="https://nucleareal.jp/OtogibaraEra/voice.html"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #f7ce55,#fec107);">御伽原江良按钮(御伽原江良)</button></a>
-        </li>
-        <li><a target="_blank" href="https://fumino-tamaki-button.firebaseapp.com/"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #664d41,#5b3b2c);">文野環按钮(文野環)</button></a>
-        </li>
-        <li><a target="_blank" href="http://suzuhara.starfree.jp"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #ffe2e6,#ffb6c1);">铃原按钮(鈴原るる)</button></a>
-        </li>
-        <li><a target="_blank" href="http://sasa-kids.com"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #eeafbf,#EF9AAF);">笹按钮(笹木咲)</button></a>
-        </li>
-    </ul>
-
-
-
-    <div><button id="vivid" class="main"
-            style="background-image: linear-gradient(to bottom right, #cfff4b,#ffa856);">ViViD/ビビッド</button></div>
-    <ul class="vivid menu" style="margin-top: 15px;margin-bottom: 25px;display: none;">
-        <li><a target="_blank" href="https://www.vividbtn.top/bell"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #FFC5DC,#FFAACB);">Bell按钮(猫芒ベル)</button></a>
-        </li>
-        <li><a target="_blank" href="https://www.vividbtn.top/memory"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #DCAEEC,#D18EE9);">Memo按钮(泡沫メモリ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://www.vividbtn.top/lily"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #DEF4FE,#B3E5FC);">Lily按钮(白百合リリィ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://www.vividbtn.top/elena"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #FEB990,#FC9F69);">Elena按钮(勇凪エレナ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://www.vividbtn.top/anko"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #B3CAEF,#79A3E8);">Anko按钮(二和餅あんこ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://www.vividbtn.top/lock"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #FE8989,#FF5858);">Lock按钮(クロノロク)</button></a>
-        </li>
-    </ul>
-
-
-
-    <div><button id="personal" class="main"
-            style="background-image: linear-gradient(to bottom right, #ffafaf,#ffb273);">个人势/個人勢</button></div>
-    <ul class="personal menu" style="margin-top: 15px;margin-bottom: 25px;display: none;">
-        <li><a target="_blank" href="http://kaguranana.moe"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #dde4ec,#c8dcf0);">狗妈按钮(神楽七奈)</button></a>
-        </li>
-        <li><a target="_blank" href="https://nyakoshofuku.org"><button class="default"
-                    style="background-image: linear-gradient(to bottom right, #bfadd1,#b693d5);">福按钮(招福にゃこ)</button></a>
-        </li>
-        <li><a target="_blank" href="https://mmzm.moe"><button class="default"
-            style="background-image: linear-gradient(to bottom right, #f3f3f1,#f7f6da);color: #777777;">眠按钮(眠目直木)</button></a>
-        </li>
-    </ul>
-
-
-
-    <footer class="footer">
-        本网站仅用于收集网址，网址指向的任何网站内容都与本网站无关<br>このWebサイトはURLの収集にのみ使用され、URLが指すWebサイトのコンテンツはこのWebサイトに関連していません<br>Powered
-        by Voice Button United Studio<br>Thanks：自闭的一只懒猫 & 派兹 <a href="https://vercel.com?utm_source=oruyanke" style="text-decoration: none"><img src="resources/vercel.svg" style="height:13px;"></a></footer>
 </body>
+
 </html>
