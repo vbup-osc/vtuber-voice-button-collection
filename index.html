@@ -311,7 +311,7 @@
         }
         
         html {
-            animation: enterSite 1.2s;
+            animation: enterSite .9s;
             /*进入动画*/
             background: #EBF3FA;
             margin: 0;
@@ -329,11 +329,6 @@
         .wrapper {
             min-height: 100%;
             margin-bottom: -50px;
-        }
-        
-        img {
-            vertical-align: middle;
-            transform: translateY(-3px);
         }
         
         .cate {
@@ -373,6 +368,12 @@
             width: 100%;
             z-index: 100;
         }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         
         .row::after,
         .row::before {
@@ -383,12 +384,7 @@
             height: 0;
             overflow: hidden;
         }
-        
-        .col {
-            /*列*/
-            float: left;
-            min-width: 1px;
-        }
+
         
         .btn {
             color: #ffffff;
@@ -402,10 +398,13 @@
             font-weight: bold;
             font-size: 18px;
             line-height: 150%;
+            display: flex;
+            justify-content: center;
             align-items: center;
             text-align: center;
             letter-spacing: 0.02em;
             transition: 0.2s;
+            cursor: pointer;
         }
         
         .btn:hover {
@@ -415,18 +414,23 @@
         .btn:active {
             transform: scale(0.9, 0.9);
         }
+
+        img {
+            margin-left: 5px;
+        }
         
         .footer {
+            text-align: center;
             font-family: Gilroy;
             font-style: normal;
             font-weight: 500;
             font-size: 15px;
-            line-height: 140%;
+            line-height: 160%;
             align-items: center;
             color: #31456A;
-            height: 50px;
-            padding: 20px;
-            margin-bottom: 13px;
+            padding: 30px 0 10px 0;
+            display: flex;
+            flex-direction: column;
         }
         
         .push {
@@ -509,9 +513,16 @@
             top: -25px;
             right: -12px;
         }
+
+        .inside {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         
         .inside>p {
-            margin: 10px;
+            text-align: center;
+            margin: 0 10px 10px 0;
         }
         
         @keyframes enterSite {
@@ -523,6 +534,7 @@
             }
         }
         
+
         @media screen and (max-width: 600px) {
             /*手机*/
             .col {
@@ -541,7 +553,7 @@
             }
         }
         
-        @media screen and (min-width: 700px) {
+        @media screen and (min-width: 600px) {
             .col {
                 width: 50%;
             }
@@ -620,7 +632,7 @@
     <div class="footer">
         本网站仅用于收集网址，网址指向的任何网站内容都与本网站无关<br>
         <!--このWebサイトはURLの収集にのみ使用され、URLが指すWebサイトのコンテンツはこのWebサイトに関連していません<br>-->
-        Powered by Voice Button United Studio<br> Thanks：自闭的一只懒猫 & Coceki & 寒いもみじ雪 &
+        Powered by Voice Button United Studio<br> Thanks：自闭的一只懒猫 & Coceki & 寒いもみじ雪
         <a href="https://vercel.com/?utm_source=oruyanke"><img src="https://vtbbtn.org/images/logo/vercel.svg" height="15" style="filter: invert(70%);"></a><br>
     </div>
 
