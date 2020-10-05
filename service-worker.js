@@ -1,4 +1,4 @@
-var cacheName = 'VBUP-V1.2'; //版本号
+var cacheName = 'VVBC-V1.2'; //版本号
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(cacheName)
