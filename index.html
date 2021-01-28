@@ -26,15 +26,15 @@
             "color": "f980ff",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2693.svg",
             "src": "https://aquaminato.moe",
-        },{
+        }, {
             "name": "狼按钮(大神ミオ)",
             "color": "fc7374",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f332.svg",
             "src": "https://ookamimio.org",
-        },{
-            "name": "狐按钮(白上フブキ) -ARCHIVED-",
+        }, {
+            "name": "狐按钮(白上フブキ)",
             "color": "64B5F6",
-            "icon": "https://github.com/lonelyion/fubuki-button",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f33d.svg",
             "src": "https://fubuki.moe",
         }, {
             "name": "樱按钮(さくらみこ)",
@@ -67,6 +67,11 @@
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f98b.svg",
             "src": "https://rushia.moe",
         }, {
+            "name": "Towa按钮(常闇トワ)",
+            "color": "816B96",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f47e.svg",
+            "src": "https://towa.live",
+        }, {
             "name": "狗按钮(戌神ころね)",
             "color": "F1C48D",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f950.svg",
@@ -92,6 +97,11 @@
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/2744.svg",
             "src": "https://artia.moe",
         }, {
+            "name": "WTM按钮(角巻わため)",
+            "color": "FDFAC1",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f40f.svg",
+            "src": "https://www.watame.moe",
+        }, {
             "name": "彼方碳按钮(天音かなた)",
             "color": "7A86CD",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f4ab.svg",
@@ -111,28 +121,28 @@
             "color": "ffa205",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f31f.svg",
             "src": "https://yozoramel.org",
-        }, ];
+        },];
         const NIJISANJI = [{ //彩虹社
-                "name": "御伽原江良按钮(御伽原江良)",
-                "color": "FEC107",
-                "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3f0.svg",
-                "src": "https://nucleareal.jp/OtogibaraEra/voice.html",
-            }, {
-                "name": "文野環按钮(文野環)",
-                "color": "5B3B2C",
-                "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f41f.svg",
-                "src": "https://fumino-tamaki-button.firebaseapp.com/",
-            }, {
-                "name": "铃原按钮(鈴原るる)",
-                "color": "FFB6C1",
-                "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3a8.svg",
-                "src": "http://suzuhara.starfree.jp",
-            }, {
-                "name": "笹按钮(笹木咲)",
-                "color": "fc05ff",
-                "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f38b.svg",
-                "src": "http://sasa-kids.com",
-            },
+            "name": "御伽原江良按钮(御伽原江良)",
+            "color": "FEC107",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3f0.svg",
+            "src": "https://nucleareal.jp/OtogibaraEra/voice.html",
+        }, {
+            "name": "文野環按钮(文野環)",
+            "color": "5B3B2C",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f41f.svg",
+            "src": "https://fumino-tamaki-button.firebaseapp.com/",
+        }, {
+            "name": "铃原按钮(鈴原るる)",
+            "color": "FFB6C1",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f3a8.svg",
+            "src": "http://suzuhara.starfree.jp",
+        }, {
+            "name": "笹按钮(笹木咲)",
+            "color": "fc05ff",
+            "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f38b.svg",
+            "src": "http://sasa-kids.com",
+        },
 
         ];
         const VIVID = [{ //ViViD
@@ -165,7 +175,7 @@
             "color": "FF5858",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f512.svg",
             "src": "https://www.vividbtn.top/lock",
-        }, ];
+        },];
         const PERSONAL = [{ //个人势
             "name": "狗妈按钮(神楽七奈)",
             "color": "C8DCF0",
@@ -191,7 +201,7 @@
             "color": "F5C1BB",
             "icon": "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/1f363.svg",
             "src": "https://hiiro.club",
-        }, ];
+        },];
 
         function init() { //初始化
             if ('serviceWorker' in navigator) {
@@ -205,7 +215,7 @@
         }
 
         function boxCreate() { //生成背景
-            for (var i = 0; i < HOLOLIVE.length + NIJISANJI.length + VIVID.length + PERSONAL.length;i++) {
+            for (var i = 0; i < HOLOLIVE.length + NIJISANJI.length + VIVID.length + PERSONAL.length; i++) {
                 var box = document.createElement("div");
                 box.className = "box";
                 box.style.left = Math.ceil(Math.random() * 60) + "%";
@@ -232,7 +242,7 @@
 
         function buttonCreateFinal(type, TYPE) {
             for (var i = 0; i < TYPE.length; i++) {
-                var button = document.createElement("button");
+                var button = document.createElement("a");
                 var span = document.createElement("span");
                 var img = document.createElement("img");
                 var colorS = parseInt("0x" + TYPE[i].color);
@@ -242,12 +252,8 @@
                 var RGB = hexToRgb(TYPE[i].color);
                 var RGBT = hexToRgb(colorT)
                 button.className = "btn";
-                button.index = i;
-                button.typer = TYPE;
-                button.onclick = function() {
-                    console.log(this.index)
-                    window.open(this.typer[this.index].src);
-                }
+                button.href = TYPE[i].src;
+                button.target = "_blank";
                 button.style.background = "linear-gradient(88.33deg, #" + TYPE[i].color + " -7.64%,#" + colorT + " 145.94%";
                 button.style.boxShadow = "-6px -6px 16px rgba(255, 255, 255, 0.6), 6px 9px 40px rgba(" + RGBT[0] + "," + RGBT[1] + "," + RGBT[2] + ", 0.44)";
                 button.style.textShadow = "-1px -1px 2px rgba(" + RGB[0] + "," + RGB[1] + "," + RGB[2] + ", 0.9), 1px 1px 2px rgba(20, 44, 73, 0.31)";
@@ -273,9 +279,13 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
+
+        a {
+            text-decoration: none;
+        }
+
         * {
             /*不允许选中字符*/
-            moz-user-select: -moz-none;
             -moz-user-select: none;
             -o-user-select: none;
             -khtml-user-select: none;
@@ -283,28 +293,28 @@
             -ms-user-select: none;
             user-select: none;
         }
-        
-         ::-webkit-scrollbar {
+
+        ::-webkit-scrollbar {
             /*滚动条美化*/
             width: 7px;
             height: 7px;
             background-color: #F5F5F5;
         }
-        
-         ::-webkit-scrollbar-track {
+
+        ::-webkit-scrollbar-track {
             box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
             -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             background-color: #F5F5F5;
         }
-        
-         ::-webkit-scrollbar-thumb {
+
+        ::-webkit-scrollbar-thumb {
             border-radius: 10px;
             box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
             -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
             background-color: #c8c8c8;
         }
-        
+
         html {
             animation: enterSite .9s;
             /*进入动画*/
@@ -314,18 +324,18 @@
             font-family: 'Noto Sans SC', sans-serif;
             height: 90%;
         }
-        
+
         body {
             margin: 0;
             padding: 0;
             height: 100%;
         }
-        
+
         .wrapper {
             min-height: 100%;
             margin-bottom: -50px;
         }
-        
+
         .cate {
             /*filter: drop-shadow(72px 112px 132px rgba(119, 142, 165, 0.4));*/
             box-shadow: 72px 112px 132px rgba(119, 142, 165, 0.4);
@@ -340,12 +350,12 @@
             height: min-content;
             border-radius: 20px;
         }
-        
+
         .banner {
             margin: 20px;
             margin-top: 50px;
         }
-        
+
         .banner>span {
             margin: 5px;
             padding: 5px;
@@ -357,7 +367,7 @@
             letter-spacing: 0.02em;
             color: #31456A;
         }
-        
+
         .grid-container {
             /*网格容器*/
             width: 100%;
@@ -369,7 +379,7 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-        
+
         .row::after,
         .row::before {
             /*行*/
@@ -380,7 +390,7 @@
             overflow: hidden;
         }
 
-        
+
         .btn {
             color: #ffffff;
             border: 0;
@@ -401,11 +411,11 @@
             transition: 0.2s;
             cursor: pointer;
         }
-        
+
         .btn:hover {
             transform: scale(1.1, 1.1);
         }
-        
+
         .btn:active {
             transform: scale(0.9, 0.9);
         }
@@ -413,7 +423,7 @@
         img {
             margin-left: 5px;
         }
-        
+
         .footer {
             text-align: center;
             font-family: Gilroy;
@@ -427,11 +437,11 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .push {
             height: 50px;
         }
-        
+
         #VBUP {
             position: fixed;
             left: 60%;
@@ -442,11 +452,12 @@
             font-size: 200px;
             background: linear-gradient(323.04deg, #E3EDF7 17.44%, #BAC7D5 180.89%);
             text-shadow: -74.5174px -25.9246px 318.933px #FFFFFF, 127.673px 76.4775px 478.4px rgba(136, 165, 191, 0.48);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             z-index: -1;
         }
-        
+
         .box {
             position: fixed;
             width: 128.92px;
@@ -458,7 +469,7 @@
             animation: boxR 60s infinite linear;
             z-index: -2;
         }
-        
+
         #i18n {
             position: absolute;
             align-content: center;
@@ -474,15 +485,15 @@
             background: radial-gradient(315.18% 315.18% at -124.11% -101.79%, #B9CCE2 19%, #FFFFFF 77.71%), #E3EDF7;
             box-shadow: -10px -6px 32px rgba(255, 255, 255, 0.6), 6px 5px 24px rgba(112, 139, 163, 0.28);
         }
-        
+
         #i18n:hover {
             transform: scale(1.1, 1.1);
         }
-        
+
         #i18n:active {
             transform: scale(0.9, 0.9);
         }
-        
+
         #logo {
             font-family: Gilroy;
             font-style: normal;
@@ -493,7 +504,7 @@
             width: max-content;
             display: flex;
         }
-        
+
         .logom {
             filter: drop-shadow(72px 112px 132px rgba(119, 142, 165, 0.4));
             margin: 4px;
@@ -502,7 +513,7 @@
             width: 50px;
             height: 50px;
         }
-        
+
         .logom>span {
             position: relative;
             top: -25px;
@@ -514,67 +525,86 @@
             flex-direction: column;
             justify-content: center;
         }
-        
+
         .inside>p {
             text-align: center;
             margin: 0 10px 10px 0;
         }
-        
+
         @keyframes enterSite {
             from {
                 filter: blur(90px);
             }
+
             to {
                 filter: blur(0px);
             }
         }
-        
+
 
         @media screen and (max-width: 600px) {
+
             /*手机*/
             .col {
                 width: 100%;
             }
+
             body {
                 margin: 5px;
             }
+
             .banner {
                 text-align: center;
             }
+
             #logo {
                 transform: translateX(-5px);
-                text-align: center;
                 margin: 0 auto;
             }
         }
-        
+
         @media screen and (min-width: 600px) {
             .col {
-                width: 50%;
+                width: 70%;
             }
+
             body {
                 margin: 20px;
             }
+
+            .banner {
+                text-align: center;
+            }
+
+            #logo {
+                transform: translateX(-5px);
+                margin: 0 auto;
+            }
         }
-        
+
         @media screen and (min-width: 1000px) {
             .col {
                 width: 25%;
             }
+
             body {
                 margin: 50px;
+            }
+
+            .banner {
+                text-align: left;
+            }
+
+            #logo {
+                margin: 0;
             }
         }
     </style>
 </head>
 
-<body onload="init()">
-    <!--<button id="i18n"><svg style="width:24px;height:24px" color="#5F83AD" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z" />
-    </svg></button>-->
+<body>
     <div class="wrapper">
         <div class="banner">
-            <!-- <img src="https://vbup.org/vbup.svg" width="120"> -->
             <div id="logo">
                 <div id="logom1" class="logom"><span>V</span></div>
                 <div id="logom2" class="logom"><span>B</span></div>
@@ -628,9 +658,12 @@
         本网站仅用于收集网址，网址指向的任何网站内容都与本网站无关<br>
         <!--このWebサイトはURLの収集にのみ使用され、URLが指すWebサイトのコンテンツはこのWebサイトに関連していません<br>-->
         Powered by Voice Button United Studio<br> Thanks：自闭的一只懒猫 & Coceki & 寒いもみじ雪
-        <a href="https://www.vercel.com/?utm_source=vbuposc&utm_campaign=oss"><img src="https://vtbbtn.org/images/logo/vercel.svg" height="15" style="filter: invert(70%);"></a><br>
     </div>
 
 </body>
+
+<script>
+    init()
+</script>
 
 </html>
