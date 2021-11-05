@@ -10,8 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#E7EFF8">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="images/logo/logo.png">
+    <link rel="manifest" href="/vtuber-voice-button-collection/manifest.json">
+    <link rel="icon" href="/vtuber-voice-button-collection/images/logo/logo.png">
     <title>VTuberの音声ボタンコレクション</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168800369-1"></script>
     <script>
@@ -232,12 +232,6 @@
         }];
 
         function init() { //初始化
-            if ('serviceWorker' in navigator) {
-
-                // register service worker
-                navigator.serviceWorker.register('/service-worker.js');
-
-            }
             boxCreate();
             buttonCreate();
         }
