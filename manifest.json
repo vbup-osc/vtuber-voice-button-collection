@@ -2,33 +2,33 @@
     "name": "VTuberの音声ボタンコレクション",
     "short_name": "VVBC",
     "description": "VTuber按钮集合",
-    "start_url": "/",
+    "start_url": "/vtuber-voice-button-collection",
     "display": "standalone",
     "orientation": "any",
     "background_color": "#E7EFF8",
     "theme_color": "#E7EFF8",
     "icons": [{
-            "src": "/images/logo/logo072.png",
+            "src": "/vtuber-voice-button-collection/images/logo/logo072.png",
             "sizes": "72x72",
             "type": "image/png"
         },
         {
-            "src": "/images/logo/logo152.png",
+            "src": "/vtuber-voice-button-collection/images/logo/logo152.png",
             "sizes": "152x152",
             "type": "image/png"
         },
         {
-            "src": "/images/logo/logo192.png",
+            "src": "/vtuber-voice-button-collection/images/logo/logo192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/images/logo/logo256.png",
+            "src": "/vtuber-voice-button-collection/images/logo/logo256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "/images/logo/logo512.png",
+            "src": "/vtuber-voice-button-collection/images/logo/logo512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
