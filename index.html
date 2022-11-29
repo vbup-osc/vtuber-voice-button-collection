@@ -133,6 +133,8 @@
             "color": "87e3ea",
             "icon": "1f691",
             "src": "https://oozorasubaru.com",
+            "gh": "https://github.com/vbup-osc/subaru-button",
+            "archived": true
         }, {
             "name": "梅露按钮(夜空メル)",
             "color": "ffa205",
@@ -162,6 +164,7 @@
             "color": "fc05ff",
             "icon": "1f38b",
             "src": "http://sasa-kids.com",
+            "archived": true
         },
 
         ];
@@ -169,38 +172,38 @@
             "name": "Bell按钮(猫芒ベル)",
             "color": "FFAACB",
             "icon": "1f514",
-            "src": "https://www.vividbtn.top/bell"
+            "src": "https://vividbtn.colter.top/bell"
         }, {
             "name": "Memo按钮(泡沫メモリ)",
             "color": "D18EE9",
             "icon": "1f47b",
-            "src": "https://www.vividbtn.top/memory"
+            "src": "https://vividbtn.colter.top/memory"
         }, {
             "name": "Lily按钮(白百合リリィ)",
             "color": "B3E5FC",
             "icon": "1f36e",
-            "src": "https://www.vividbtn.top/lily"
+            "src": "https://vividbtn.colter.top/lily"
         }, {
             "name": "Elena按钮(勇凪エレナ)",
             "color": "e69d00",
             "icon": "1f36f",
-            "src": "https://www.vividbtn.top/elena"
+            "src": "https://vividbtn.colter.top/elena"
         }, {
             "name": "Anko按钮(二和餅あんこ)",
             "color": "79A3E8",
             "icon": "1f361",
-            "src": "https://www.vividbtn.top/anko"
+            "src": "https://vividbtn.colter.top/anko"
         }, {
             "name": "Lock按钮(クロノロク)",
             "color": "FF5858",
             "icon": "1f512",
-            "src": "https://www.vividbtn.top/lock"
+            "src": "https://vividbtn.colter.top/lock"
         },];
         var PERSONAL = [{ //个人势 其它
             "name": "狗妈按钮(神楽七奈)",
             "color": "C8DCF0",
             "icon": "1f336",
-            "src": "http://kaguranana.moe",
+            "src": "https://kaguranana-button-blacktunes.vercel.app/",
         }, {
             "name": "福按钮(招福にゃこ)",
             "color": "B693D5",
@@ -246,9 +249,13 @@
             "src": "https://kiyuu.club/"
         }];
 
+        var count = [0,0]
+
         function init() { //初始化
             boxCreate();
             buttonCreate();
+            var countDom = document.getElementById('count');
+            countDom.innerText = count[0] + '/' + count[1]
         }
 
         function boxCreate() { //生成背景
@@ -274,7 +281,6 @@
             buttonCreateFinal(nijisanji, NIJISANJI);
             buttonCreateFinal(vivid, VIVID);
             buttonCreateFinal(personal, PERSONAL);
-
         }
 
         function getIconUrl(key) {
@@ -283,6 +289,7 @@
 
         function buttonCreateFinal(type, TYPE) {
             for (var i = 0; i < TYPE.length; i++) {
+                ++count[1]
                 var button = document.createElement("a");
                 var placeholder = document.createElement("div");
                 var span = document.createElement("span");
@@ -303,6 +310,7 @@
                 button.style.border = "#" + colorT;
                 span.innerText = TYPE[i].name;
                 if (TYPE[i].archived) {
+                    ++count[0]
                     button.style.background = "linear-gradient(88.33deg, rgb(255, 170, 203) -7.64%, rgb(202, 125, 203) 145.94%)"
                     button.style.filter = "grayscale(100%)"
 
@@ -677,7 +685,7 @@
                 <div id="logom3" class="logom"><span>U</span></div>
                 <div id="logom4" class="logom"><span>P</span></div>
             </div>
-            <span>VTuberの音声ボタンコレクション</span>
+            <span>VTuberの音声ボタンコレクション <span id="count"></span></span>
         </div>
         <div class="grid-container">
             <div class="row">
