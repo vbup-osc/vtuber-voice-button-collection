@@ -4,746 +4,917 @@
     Maintained by Coceki & 寒いもみじ雪
 -->
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#E7EFF8">
-    <link rel="manifest" href="/vtuber-voice-button-collection/manifest.json">
-    <link rel="icon" href="/vtuber-voice-button-collection/images/logo/logo.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#E7EFF8" />
+    <link rel="manifest" href="/vtuber-voice-button-collection/manifest.json" />
+    <link
+      rel="icon"
+      href="/vtuber-voice-button-collection/images/logo/logo.png"
+    />
     <title>VTuberの音声ボタンコレクション</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168800369-1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-168800369-1"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-168800369-1');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-168800369-1");
     </script>
     <script>
-        var githubIcon = 'data:image/png;base64,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'
+      var githubIcon =
+        "data:image/png;base64,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";
 
-        var HOLOLIVE = [{ //Hololive
-            "name": "夸按钮(湊あくあ)",
-            "color": "f980ff",
-            "icon": "2693",
-            "src": "https://aquaminato.moe",
-        }, {
-            "name": "狼按钮(大神ミオ)",
-            "color": "fc7374",
-            "icon": "1f332",
-            "src": "https://ookamimio.org",
-        }, {
-            "name": "狐按钮(白上フブキ)",
-            "color": "64B5F6",
-            "icon": "1f33d",
-            "url": "https://fubuki.moe/",
-            "gh": "https://github.com/lonelyion/fubuki-button",
-            "archived": true
-        }, {
-            "name": "樱按钮(さくらみこ)",
-            "color": "FF84AB",
-            "icon": "1f338",
-            "src": "https://sakuramiko.org",
-            "gh": "https://github.com/vbup-osc/miko-button",
-            "archived": true
-        }, {
-            "name": "Peko按钮(兎田ぺこら)",
-            "color": "849AF5",
-            "icon": "1f955",
-            "src": "https://peko.top",
-            "gh": "https://github.com/vbup-osc/new-pekobutton",
-            "archived": true
-        }, {
-            "name": "余按钮(百鬼あやめ)",
-            "color": "FF476C",
-            "icon": "1f608",
-            "src": "https://ayame.yokinanya.icu",
-        }, {
-            "name": "祭按钮(夏色まつり)",
-            "color": "FFBC6B",
-            "icon": "1f3ee",
-            "src": "https://natsuiromatsuri.moe",
-            "archived": true
-        }, {
-            "name": "星按钮(星街すいせい)",
-            "color": "6375BD",
-            "icon": "2604",
-            "src": "https://suisei.moe",
-        }, {
-            "name": "粽按钮(潤羽るしあ)",
-            "color": "88D1B9",
-            "icon": "1f98b",
-            "src": "https://rushia.moe",
-        }, {
-            "name": "Towa按钮(常闇トワ)",
-            "color": "816B96",
-            "icon": "1f47e",
-            "src": "https://towa.live",
-            "archived": true
-        }, {
-            "name": "狗按钮(戌神ころね)",
-            "color": "F1C48D",
-            "icon": "1f950",
-            "src": "https://korone.icu",
-            "archived": true
-        }, {
-            "name": "猫按钮(猫又おかゆ)",
-            "color": "B350BD",
-            "icon": "1f359",
-            "src": "https://okayu.icu",
-            "gh": "https://github.com/gyf200708/okayu-button",
-            "archived": true
-        }, {
-            "name": "桃按钮(黒桃影)",
-            "color": "FF97CB",
-            "icon": "2660",
-            "src": "https://sepeach.com",
-            "archived": true
-        }, {
-            "name": "船长按钮(宝鐘マリン)",
-            "color": "C06375",
-            "icon": "1f3f4-200d-2620-fe0f",
-            "src": "https://www.ahoybutton.art",
-        }, {
-            "name": "阿媂娅按钮(アティア)",
-            "color": "6d00d3",
-            "icon": "2744",
-            "src": "https://artia.moe",
-        }, {
-            "name": "WTM按钮(角巻わため)",
-            "color": "FDFAC1",
-            "icon": "1f40f",
-            "src": "",
-            "archived": true
-        }, {
-            "name": "彼方碳按钮(天音かなた)",
-            "color": "7A86CD",
-            "icon": "1f4ab",
-            "src": "https://kanata.club",
-            "gh": "https://github.com/vbup-osc/kanata-button",
-            "archived": true
-        }, {
-            "name": "心按钮(赤井はあと)",
-            "color": "ffb400",
-            "icon": "2764",
-            "src": "https://haato.club",
-            "archived": true
-        }, {
-            "name": "昴按钮(大空スバル)",
-            "color": "87e3ea",
-            "icon": "1f691",
-            "src": "https://oozorasubaru.com",
-            "gh": "https://github.com/vbup-osc/subaru-button",
-            "archived": true
-        }, {
-            "name": "梅露按钮(夜空メル)",
-            "color": "ffa205",
-            "icon": "1f31f",
-            "src": "https://yozoramel.org",
-            "gh": "https://github.com/vbup-osc/mel-button",
-            "archived": true
-        },];
-        var NIJISANJI = [{ //彩虹社
-            "name": "御伽原江良按钮(御伽原江良)",
-            "color": "FEC107",
-            "icon": "1f3f0",
-            "src": "https://nucleareal.jp/OtogibaraEra/voice.html",
-        }, {
-            "name": "文野環按钮(文野環)",
-            "color": "5B3B2C",
-            "icon": "1f41f",
-            "src": "https://fumino-tamaki-button.firebaseapp.com/",
-        }, {
-            "name": "铃原按钮(鈴原るる)",
-            "color": "FFB6C1",
-            "icon": "1f3a8",
-            "src": "http://suzuhara.starfree.jp",
-            "archived": true
-        }, {
-            "name": "笹按钮(笹木咲)",
-            "color": "fc05ff",
-            "icon": "1f38b",
-            "src": "http://sasa-kids.com",
-            "gh": "https://github.com/vbup-osc/sasa-button",
-            "archived": true
+      //Hololive
+      var HOLOLIVE = [
+        {
+          name: "夸按钮(湊あくあ)",
+          color: "f980ff",
+          icon: "2693",
+          src: "https://aquaminato.moe",
         },
+        {
+          name: "狼按钮(大神ミオ)",
+          color: "fc7374",
+          icon: "1f332",
+          src: "https://ookamimio.org",
+        },
+        {
+          name: "狐按钮(白上フブキ)",
+          color: "64B5F6",
+          icon: "1f33d",
+          url: "https://fubuki.moe/",
+          gh: "https://github.com/lonelyion/fubuki-button",
+          archived: true,
+        },
+        {
+          name: "樱按钮(さくらみこ)",
+          color: "FF84AB",
+          icon: "1f338",
+          src: "https://sakuramiko.org",
+          gh: "https://github.com/vbup-osc/miko-button",
+          archived: true,
+        },
+        {
+          name: "Peko按钮(兎田ぺこら)",
+          color: "849AF5",
+          icon: "1f955",
+          src: "https://peko.top",
+          gh: "https://github.com/vbup-osc/new-pekobutton",
+          archived: true,
+        },
+        {
+          name: "余按钮(百鬼あやめ)",
+          color: "FF476C",
+          icon: "1f608",
+          src: "https://ayame.yokinanya.icu",
+        },
+        {
+          name: "祭按钮(夏色まつり)",
+          color: "FFBC6B",
+          icon: "1f3ee",
+          src: "https://natsuiromatsuri.moe",
+          archived: true,
+        },
+        {
+          name: "星按钮(星街すいせい)",
+          color: "6375BD",
+          icon: "2604",
+          src: "https://suisei.moe",
+        },
+        {
+          name: "粽按钮(潤羽るしあ)",
+          color: "88D1B9",
+          icon: "1f98b",
+          src: "https://rushia.moe",
+        },
+        {
+          name: "Towa按钮(常闇トワ)",
+          color: "816B96",
+          icon: "1f47e",
+          src: "https://towa.live",
+          archived: true,
+        },
+        {
+          name: "狗按钮(戌神ころね)",
+          color: "F1C48D",
+          icon: "1f950",
+          src: "https://korone.icu",
+          archived: true,
+        },
+        {
+          name: "猫按钮(猫又おかゆ)",
+          color: "B350BD",
+          icon: "1f359",
+          src: "https://okayu.icu",
+          gh: "https://github.com/gyf200708/okayu-button",
+          archived: true,
+        },
+        {
+          name: "桃按钮(黒桃影)",
+          color: "FF97CB",
+          icon: "2660",
+          src: "https://sepeach.com",
+          archived: true,
+        },
+        {
+          name: "船长按钮(宝鐘マリン)",
+          color: "C06375",
+          icon: "1f3f4-200d-2620-fe0f",
+          src: "https://www.ahoybutton.art",
+        },
+        {
+          name: "阿媂娅按钮(アティア)",
+          color: "6d00d3",
+          icon: "2744",
+          src: "https://artia.moe",
+          archived: true,
+        },
+        {
+          name: "WTM按钮(角巻わため)",
+          color: "FDFAC1",
+          icon: "1f40f",
+          src: "",
+          archived: true,
+        },
+        {
+          name: "彼方碳按钮(天音かなた)",
+          color: "7A86CD",
+          icon: "1f4ab",
+          src: "https://kanata.club",
+          gh: "https://github.com/vbup-osc/kanata-button",
+          archived: true,
+        },
+        {
+          name: "心按钮(赤井はあと)",
+          color: "ffb400",
+          icon: "2764",
+          src: "https://haato.club",
+          archived: true,
+        },
+        {
+          name: "昴按钮(大空スバル)",
+          color: "87e3ea",
+          icon: "1f691",
+          src: "https://oozorasubaru.com",
+          gh: "https://github.com/vbup-osc/subaru-button",
+          archived: true,
+        },
+        {
+          name: "梅露按钮(夜空メル)",
+          color: "ffa205",
+          icon: "1f31f",
+          src: "https://yozoramel.org",
+          gh: "https://github.com/vbup-osc/mel-button",
+          archived: true,
+        },
+      ];
+      //彩虹社
+      var NIJISANJI = [
+        {
+          name: "御伽原江良按钮(御伽原江良)",
+          color: "FEC107",
+          icon: "1f3f0",
+          src: "https://nucleareal.jp/OtogibaraEra/voice.html",
+        },
+        {
+          name: "文野環按钮(文野環)",
+          color: "5B3B2C",
+          icon: "1f41f",
+          src: "https://fumino-tamaki-button.firebaseapp.com/",
+        },
+        {
+          name: "铃原按钮(鈴原るる)",
+          color: "FFB6C1",
+          icon: "1f3a8",
+          src: "http://suzuhara.starfree.jp",
+          archived: true,
+        },
+        {
+          name: "笹按钮(笹木咲)",
+          color: "fc05ff",
+          icon: "1f38b",
+          src: "http://sasa-kids.com",
+          gh: "https://github.com/vbup-osc/sasa-button",
+          archived: true,
+        },
+      ];
+      //ViViD
+      var VIVID = [
+        {
+          name: "Bell按钮(猫芒ベル)",
+          color: "FFAACB",
+          icon: "1f514",
+          src: "https://vividbtn.colter.top/bell",
+          gh: "https://github.com/ViViDButton/vivid-button",
+          archived: true,
+        },
+        {
+          name: "Memo按钮(泡沫メモリ)",
+          color: "D18EE9",
+          icon: "1f47b",
+          src: "https://vividbtn.colter.top/memory",
+          gh: "https://github.com/ViViDButton/vivid-button",
+          archived: true,
+        },
+        {
+          name: "Lily按钮(白百合リリィ)",
+          color: "B3E5FC",
+          icon: "1f36e",
+          src: "https://vividbtn.colter.top/lily",
+          gh: "https://github.com/ViViDButton/vivid-button",
+          archived: true,
+        },
+        {
+          name: "Elena按钮(勇凪エレナ)",
+          color: "e69d00",
+          icon: "1f36f",
+          src: "https://vividbtn.colter.top/elena",
+          gh: "https://github.com/ViViDButton/vivid-button",
+          archived: true,
+        },
+        {
+          name: "Anko按钮(二和餅あんこ)",
+          color: "79A3E8",
+          icon: "1f361",
+          src: "https://vividbtn.colter.top/anko",
+          gh: "https://github.com/ViViDButton/vivid-button",
+          archived: true,
+        },
+        {
+          name: "Lock按钮(クロノロク)",
+          color: "FF5858",
+          icon: "1f512",
+          src: "https://vividbtn.colter.top/lock",
+          gh: "https://github.com/ViViDButton/vivid-button",
+          archived: true,
+        },
+      ];
+      //其它
+      var PERSONAL = [
+        {
+          name: "七奈按钮(神楽七奈)",
+          color: "C8DCF0",
+          icon: "1f336",
+          src: "https://kaguranana-button-blacktunes.vercel.app/",
+        },
+        {
+          name: "福按钮(招福にゃこ)",
+          color: "B693D5",
+          icon: "1f37a",
+          scr: "https://nyakoshofuku.org",
+          gh: "https://github.com/vbup-osc/shofuku-button",
+          archived: true,
+        },
+        {
+          name: "Mea按钮(神楽めあ)",
+          color: "618db4",
+          icon: "1f365",
+          src: "https://meamea.moe",
+        },
+        {
+          name: "眠按钮(眠目直木)",
+          color: "F7F6DA",
+          icon: "1f408",
+          src: "https://mmzm.moe",
+          archived: true,
+        },
+        {
+          name: "猫猫按钮(Hiiro)",
+          color: "F5C1BB",
+          icon: "1f363",
+          src: "https://hiiro.club",
+        },
+        {
+          name: "梦魇按钮(希亚娜Ciyana)",
+          color: "4d5c9c",
+          icon: "1f4a4",
+          src: "https://ciyana.moe",
+          gh: "https://github.com/FrozenLemonTee/ciyana-button",
+          archived: true,
+        },
+        {
+          name: "虚研社按钮(虚研社)",
+          color: "CD3951",
+          icon: "1f308",
+          src: "https://voice.xuyanshe.club",
+        },
+        {
+          name: "Eliro按钮(彼岸霜滢Eliro)",
+          color: "BFB8FF",
+          icon: "2744",
+          src: "https://eliro.top",
+        },
+        {
+          name: "希侑按钮(希侑Kiyuu)",
+          color: "FF91AE",
+          icon: "1f408-200d-2b1b",
+          src: "https://kiyuu.club/",
+          archived: true,
+        },
+        {
+          name: "大白猫按钮(艾尔莎)",
+          color: "7092c5",
+          icon: "",
+          src: "https://elsa.rce.moe/",
+        },
+        {
+          name: "豹按钮(白神遥)",
+          color: "ffaea6",
+          icon: "",
+          src: "https://haruka.cmyr.ltd/",
+        },
+        {
+          name: "时雨羽衣按钮(时雨羽衣)",
+          color: "fdf8f1",
+          icon: "",
+          src: "http://cbtm.html.xdomain.jp/usbtn/usbtn.html",
+        },
+      ];
 
-        ];
-        var VIVID = [{ //ViViD
-            "name": "Bell按钮(猫芒ベル)",
-            "color": "FFAACB",
-            "icon": "1f514",
-            "src": "https://vividbtn.colter.top/bell"
-        }, {
-            "name": "Memo按钮(泡沫メモリ)",
-            "color": "D18EE9",
-            "icon": "1f47b",
-            "src": "https://vividbtn.colter.top/memory"
-        }, {
-            "name": "Lily按钮(白百合リリィ)",
-            "color": "B3E5FC",
-            "icon": "1f36e",
-            "src": "https://vividbtn.colter.top/lily"
-        }, {
-            "name": "Elena按钮(勇凪エレナ)",
-            "color": "e69d00",
-            "icon": "1f36f",
-            "src": "https://vividbtn.colter.top/elena"
-        }, {
-            "name": "Anko按钮(二和餅あんこ)",
-            "color": "79A3E8",
-            "icon": "1f361",
-            "src": "https://vividbtn.colter.top/anko"
-        }, {
-            "name": "Lock按钮(クロノロク)",
-            "color": "FF5858",
-            "icon": "1f512",
-            "src": "https://vividbtn.colter.top/lock"
-        },];
-        var PERSONAL = [{ //个人势 其它
-            "name": "狗妈按钮(神楽七奈)",
-            "color": "C8DCF0",
-            "icon": "1f336",
-            "src": "https://kaguranana-button-blacktunes.vercel.app/",
-        }, {
-            "name": "福按钮(招福にゃこ)",
-            "color": "B693D5",
-            "icon": "1f37a",
-            "scr": "https://nyakoshofuku.org",
-            "gh": "https://github.com/vbup-osc/shofuku-button",
-            "archived": true
-        }, {
-            "name": "Mea按钮(神楽めあ)",
-            "color": "618db4",
-            "icon": "1f365",
-            "src": "https://meamea.moe",
-        }, {
-            "name": "眠按钮(眠目直木)",
-            "color": "F7F6DA",
-            "icon": "1f408",
-            "src": "https://mmzm.moe",
-            "archived": true
-        }, {
-            "name": "Hiiro按钮(Hiiro)",
-            "color": "F5C1BB",
-            "icon": "1f363",
-            "src": "https://hiiro.club",
-        }, {
-            "name": "梦魇按钮(希亚娜Ciyana)",
-            "color": "4d5c9c",
-            "icon": "1f4a4",
-            "src": "https://ciyana.moe",
-        }, {
-            "name": "虚研社按钮(虚研社)",
-            "color": "CD3951",
-            "icon": "1f308",
-            "src": "https://voice.xuyanshe.club",
-        }, {
-            "name": "Eliro按钮(彼岸霜滢Eliro)",
-            "color": "BFB8FF",
-            "icon": "2744",
-            "src": "https://eliro.top"
-        }, {
-            "name": "希侑按钮(希侑Kiyuu)",
-            "color": "FF91AE",
-            "icon": "1f408-200d-2b1b",
-            "src": "https://kiyuu.club/",
-            "archived": true
-        }];
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
 
-        var count = [0,0]
+      var count = [0, 0];
 
-        function init() { //初始化
-            boxCreate();
-            buttonCreate();
-            var countDom = document.getElementById('count');
-            countDom.innerText = count[0] + '/' + count[1]
+      function init() {
+        //初始化
+        boxCreate();
+        buttonCreate();
+        var countDom = document.getElementById("count");
+        countDom.innerText = count[0] + "/" + count[1];
+      }
+
+      function boxCreate() {
+        //生成背景
+        for (var i = 0; i < 2; i++) {
+          var box = document.createElement("div");
+          box.className = "box";
+          box.style.animation =
+            "fade-in 0.5s forwards, horizontal " +
+            getRandom(40, 50) / 10 +
+            "s infinite linear alternate, vertical " +
+            getRandom(40, 50) / 10 +
+            "s infinite linear alternate";
+          box.style.animationDelay =
+            getRandom((i + 1) * 10, (i + 2) * 10) / 10 + "s";
+
+          var item = document.createElement("div");
+          var size = getRandom(200, 400) + "px";
+          item.style.width = size;
+          item.style.height = size;
+          item.style.transform = "rotate(" + getRandom(30, 60) + "deg)";
+          item.style.animationDuration = getRandom(i + 5, 10) + "s";
+          box.appendChild(item);
+          document.body.appendChild(box);
         }
+      }
 
-        function boxCreate() { //生成背景
-            for (var i = 0; i < HOLOLIVE.length + NIJISANJI.length + VIVID.length + PERSONAL.length; i++) {
-                var box = document.createElement("div");
-                box.className = "box";
-                box.style.left = Math.ceil(Math.random() * 60) + "%";
-                box.style.top = Math.ceil(Math.random() * 60) + "%";
-                var size = Math.floor(Math.random() * (400 - 120 + 1) + 120) + "px";
-                box.style.width = size;
-                box.style.height = size;
-                box.style.transform = "rotate(" + Math.ceil(Math.random() * 180) + "deg)"
-                document.body.appendChild(box);
+      function buttonCreate() {
+        var hololive = document.getElementById("hololive");
+        var nijisanji = document.getElementById("nijisanji");
+        var vivid = document.getElementById("vivid");
+        var personal = document.getElementById("personal");
+        buttonCreateFinal(hololive, HOLOLIVE);
+        buttonCreateFinal(nijisanji, NIJISANJI);
+        buttonCreateFinal(vivid, VIVID);
+        buttonCreateFinal(personal, PERSONAL);
+      }
+
+      function getIconUrl(key) {
+        return (
+          "https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/" +
+          key +
+          ".svg"
+        );
+      }
+
+      function buttonCreateFinal(type, TYPE) {
+        for (var i = 0; i < TYPE.length; i++) {
+          ++count[1];
+          var button = document.createElement("a");
+          var placeholder = document.createElement("div");
+          var span = document.createElement("span");
+          var img = document.createElement("img");
+          var colorS = parseInt("0x" + TYPE[i].color);
+          var colorE = colorS - 3484928;
+          var colorT = colorE.toString(16); //得到渐变后的颜色值
+          var src = TYPE[i].src;
+          var RGB = hexToRgb(TYPE[i].color);
+          var RGBT = hexToRgb(colorT);
+          if (TYPE[i].icon) {
+            img.src = getIconUrl(TYPE[i].icon);
+          }
+          img.width = "25";
+
+          button.target = "_blank";
+          button.className = "btn";
+          button.style.background =
+            "linear-gradient(88.33deg, #" +
+            TYPE[i].color +
+            " -7.64%,#" +
+            colorT +
+            " 145.94%";
+          button.style.boxShadow =
+            "-6px -6px 16px rgba(255, 255, 255, 0.6), 6px 9px 40px rgba(" +
+            RGBT[0] +
+            "," +
+            RGBT[1] +
+            "," +
+            RGBT[2] +
+            ", 0.44)";
+          button.style.border = "#" + colorT;
+          span.innerText = TYPE[i].name;
+          if (TYPE[i].archived) {
+            button.style.background =
+              "linear-gradient(88.33deg, rgb(255, 170, 203) -7.64%, rgb(202, 125, 203) 145.94%)";
+            button.style.filter = "grayscale(100%)";
+
+            if (TYPE[i].gh) {
+              button.href = TYPE[i].gh;
+              img.src = githubIcon;
+            } else {
+              button.style.textDecoration = "line-through";
+              button.style.pointerEvents = "none";
             }
-        }
+          } else {
+            ++count[0];
+            button.style.textShadow =
+              "-1px -1px 2px rgba(" +
+              RGB[0] +
+              "," +
+              RGB[1] +
+              "," +
+              RGB[2] +
+              ", 0.9), 1px 1px 2px rgba(20, 44, 73, 0.31)";
 
-        function buttonCreate() {
-            var hololive = document.getElementById("hololive");
-            var nijisanji = document.getElementById("nijisanji");
-            var vivid = document.getElementById("vivid");
-            var personal = document.getElementById("personal");
-            buttonCreateFinal(hololive, HOLOLIVE);
-            buttonCreateFinal(nijisanji, NIJISANJI);
-            buttonCreateFinal(vivid, VIVID);
-            buttonCreateFinal(personal, PERSONAL);
-        }
-
-        function getIconUrl(key) {
-          return 'https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/svg/' + key + '.svg'
-        }
-
-        function buttonCreateFinal(type, TYPE) {
-            for (var i = 0; i < TYPE.length; i++) {
-                ++count[1]
-                var button = document.createElement("a");
-                var placeholder = document.createElement("div");
-                var span = document.createElement("span");
-                var img = document.createElement("img");
-                var colorS = parseInt("0x" + TYPE[i].color);
-                var colorE = colorS - 3484928;
-                var colorT = colorE.toString(16); //得到渐变后的颜色值
-                var src = TYPE[i].src;
-                var RGB = hexToRgb(TYPE[i].color);
-                var RGBT = hexToRgb(colorT)
-                img.src = getIconUrl(TYPE[i].icon);
-                img.width = "25";
-
-                button.target = "_blank";
-                button.className = "btn";
-                button.style.background = "linear-gradient(88.33deg, #" + TYPE[i].color + " -7.64%,#" + colorT + " 145.94%";
-                button.style.boxShadow = "-6px -6px 16px rgba(255, 255, 255, 0.6), 6px 9px 40px rgba(" + RGBT[0] + "," + RGBT[1] + "," + RGBT[2] + ", 0.44)";
-                button.style.border = "#" + colorT;
-                span.innerText = TYPE[i].name;
-                if (TYPE[i].archived) {
-                    ++count[0]
-                    button.style.background = "linear-gradient(88.33deg, rgb(255, 170, 203) -7.64%, rgb(202, 125, 203) 145.94%)"
-                    button.style.filter = "grayscale(100%)"
-
-                    if (TYPE[i].gh) {
-                      button.href = TYPE[i].gh;
-                      img.src = githubIcon
-                    } else {
-                      span.innerText += " -ARCHIVED-"
-                      button.style.pointerEvents = "none";
-                    }
-                } else {
-                    button.style.textShadow = "-1px -1px 2px rgba(" + RGB[0] + "," + RGB[1] + "," + RGB[2] + ", 0.9), 1px 1px 2px rgba(20, 44, 73, 0.31)";
-
-                    if (TYPE[i].src) {
-                        button.href = TYPE[i].src;
-                    } else {
-                        button.style.pointerEvents = "none";
-                    }
-                }
-
-                placeholder.style.width = '35px'
-                placeholder.style.flex = '0 0 35px'
-                button.appendChild(img);
-                button.appendChild(span);
-                button.appendChild(placeholder);
-                type.appendChild(button);
+            if (TYPE[i].src) {
+              button.href = TYPE[i].src;
+            } else {
+              button.style.pointerEvents = "none";
             }
-        }
+          }
 
-        function hexToRgb(hex) { //HEX颜色转换RGB
-            var R = hex.substr(0, 2);
-            var G = hex.substr(2, 2);
-            var B = hex.substr(4, 2);
-            R = parseInt("0x" + R);
-            G = parseInt("0x" + G);
-            B = parseInt("0x" + B);
-            return [R, G, B]
+          placeholder.style.width = "35px";
+          placeholder.style.flex = "0 0 35px";
+          button.appendChild(img);
+          button.appendChild(span);
+          button.appendChild(placeholder);
+          type.appendChild(button);
         }
+      }
+
+      function hexToRgb(hex) {
+        //HEX颜色转换RGB
+        var R = hex.substr(0, 2);
+        var G = hex.substr(2, 2);
+        var B = hex.substr(4, 2);
+        R = parseInt("0x" + R);
+        G = parseInt("0x" + G);
+        B = parseInt("0x" + B);
+        return [R, G, B];
+      }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap");
 
-        a {
-            color: #31456A;
-            text-decoration: none;
+      a {
+        color: #31456a;
+        text-decoration: none;
+      }
+
+      * {
+        /*不允许选中字符*/
+        -moz-user-select: none;
+        -o-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      ::-webkit-scrollbar {
+        /*滚动条美化*/
+        width: 7px;
+        height: 7px;
+        background-color: #f5f5f5;
+      }
+
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: #f5f5f5;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        background-color: #c8c8c8;
+      }
+
+      html {
+        animation: enterSite 0.9s;
+        /*进入动画*/
+        background: #ebf3fa;
+        margin: 0;
+        padding: 0;
+        font-family: "Noto Sans SC", sans-serif;
+        height: 90%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      .wrapper {
+        min-height: 100%;
+        margin-bottom: -50px;
+      }
+
+      .cate {
+        /*filter: drop-shadow(72px 112px 132px rgba(119, 142, 165, 0.4));*/
+        box-shadow: 72px 112px 132px rgba(119, 142, 165, 0.4);
+        font-family: Gilroy;
+        font-weight: bold;
+        font-size: 22px;
+        letter-spacing: 0.02em;
+        color: #31456a;
+        background: linear-gradient(
+          180deg,
+          #ebf3fa 9.85%,
+          #dde7f3 53.92%,
+          #e6f0f9 100%
+        );
+        margin: 10px;
+        padding: 20px;
+        height: min-content;
+        border-radius: 20px;
+      }
+
+      .banner {
+        margin: 20px;
+        margin-top: 50px;
+      }
+
+      .banner > span {
+        margin: 5px;
+        padding: 5px;
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        align-items: center;
+        letter-spacing: 0.02em;
+        color: #31456a;
+      }
+
+      .grid-container {
+        /*网格容器*/
+        width: 100%;
+        z-index: 100;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .row::after,
+      .row::before {
+        /*行*/
+        content: "";
+        display: block;
+        clear: both;
+        height: 0;
+        overflow: hidden;
+      }
+
+      .btn {
+        color: #ffffff;
+        border: 0;
+        outline: none;
+        border-radius: 20px;
+        margin: 5px;
+        padding: 10px;
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 150%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.02em;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: scale(1.1, 1.1);
+      }
+
+      .btn:active {
+        transform: scale(0.9, 0.9);
+      }
+
+      img {
+        margin: 0 5px;
+      }
+
+      .footer {
+        text-align: center;
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 160%;
+        align-items: center;
+        color: #31456a;
+        padding: 30px 0 10px 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .push {
+        height: 50px;
+      }
+
+      #VBUP {
+        position: fixed;
+        top: 70%;
+        right: 0;
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 200px;
+        background: linear-gradient(to bottom, #e3edf7 18%, #bac7d5);
+        background-clip: text;
+        opacity: 0.7;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index: -1;
+      }
+
+      .box {
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        animation-composition: accumulate;
+        z-index: -2;
+      }
+
+      .box div {
+        background: #e3edf7;
+        box-shadow: inset -9.2px -9.2px 36.8px rgba(255, 255, 255, 0.8),
+          inset 9.2px 9.2px 27.6px rgba(136, 165, 191, 0.4);
+        border-radius: 36.8px;
+        animation: box 5s infinite linear;
+      }
+
+      #logo {
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 60px;
+        color: #00ceff;
+        height: auto;
+        width: max-content;
+        display: flex;
+      }
+
+      .logom {
+        filter: drop-shadow(72px 112px 132px rgba(119, 142, 165, 0.4));
+        margin: 4px;
+        background: #fff;
+        border-radius: 8px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .logom > span {
+        position: relative;
+        top: -25px;
+        right: -12px;
+      }
+
+      .inside {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .inside > p {
+        text-align: center;
+        margin: 0 10px 10px 0;
+      }
+
+      @keyframes box {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes horizontal {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(calc(100vw - 100%));
+        }
+      }
+
+      @keyframes vertical {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(calc(100vh - 100%));
+        }
+      }
+
+      @keyframes enterSite {
+        from {
+          filter: blur(90px);
         }
 
-        * {
-            /*不允许选中字符*/
-            -moz-user-select: none;
-            -o-user-select: none;
-            -khtml-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+        to {
+          filter: blur(0px);
         }
+      }
 
-        ::-webkit-scrollbar {
-            /*滚动条美化*/
-            width: 7px;
-            height: 7px;
-            background-color: #F5F5F5;
-        }
-
-        ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            background-color: #F5F5F5;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
-            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
-            background-color: #c8c8c8;
-        }
-
-        html {
-            animation: enterSite .9s;
-            /*进入动画*/
-            background: #EBF3FA;
-            margin: 0;
-            padding: 0;
-            font-family: 'Noto Sans SC', sans-serif;
-            height: 90%;
+      @media screen and (max-width: 600px) {
+        /*手机*/
+        .col {
+          width: 100%;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-
-        .wrapper {
-            min-height: 100%;
-            margin-bottom: -50px;
-        }
-
-        .cate {
-            /*filter: drop-shadow(72px 112px 132px rgba(119, 142, 165, 0.4));*/
-            box-shadow: 72px 112px 132px rgba(119, 142, 165, 0.4);
-            font-family: Gilroy;
-            font-weight: bold;
-            font-size: 22px;
-            letter-spacing: 0.02em;
-            color: #31456A;
-            background: linear-gradient(180deg, #EBF3FA 9.85%, #DDE7F3 53.92%, #E6F0F9 100%);
-            margin: 10px;
-            padding: 20px;
-            height: min-content;
-            border-radius: 20px;
+          margin: 5px;
         }
 
         .banner {
-            margin: 20px;
-            margin-top: 50px;
-        }
-
-        .banner>span {
-            margin: 5px;
-            padding: 5px;
-            font-family: Gilroy;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 30px;
-            align-items: center;
-            letter-spacing: 0.02em;
-            color: #31456A;
-        }
-
-        .grid-container {
-            /*网格容器*/
-            width: 100%;
-            z-index: 100;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .row::after,
-        .row::before {
-            /*行*/
-            content: "";
-            display: block;
-            clear: both;
-            height: 0;
-            overflow: hidden;
-        }
-
-
-        .btn {
-            color: #ffffff;
-            border: 0;
-            outline: none;
-            border-radius: 20px;
-            margin: 5px;
-            padding: 10px;
-            font-family: Gilroy;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 150%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            letter-spacing: 0.02em;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: scale(1.1, 1.1);
-        }
-
-        .btn:active {
-            transform: scale(0.9, 0.9);
-        }
-
-        img {
-            margin: 0 5px;
-        }
-
-        .footer {
-            text-align: center;
-            font-family: Gilroy;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 15px;
-            line-height: 160%;
-            align-items: center;
-            color: #31456A;
-            padding: 30px 0 10px 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .push {
-            height: 50px;
-        }
-
-        #VBUP {
-            position: fixed;
-            left: 60%;
-            top: 70%;
-            font-family: Gilroy;
-            font-style: normal;
-            font-weight: bolder;
-            font-size: 200px;
-            background: linear-gradient(323.04deg, #E3EDF7 17.44%, #BAC7D5 180.89%);
-            text-shadow: -74.5174px -25.9246px 318.933px #FFFFFF, 127.673px 76.4775px 478.4px rgba(136, 165, 191, 0.48);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            z-index: -1;
-        }
-
-        .box {
-            position: fixed;
-            width: 128.92px;
-            height: 128.92px;
-            background: #E3EDF7;
-            box-shadow: inset -9.2px -9.2px 36.8px rgba(255, 255, 255, 0.8), inset 9.2px 9.2px 27.6px rgba(136, 165, 191, 0.4);
-            border-radius: 36.8px;
-            transform: rotate(30deg);
-            animation: boxR 60s infinite linear;
-            z-index: -2;
-        }
-
-        #i18n {
-            position: absolute;
-            align-content: center;
-            text-align: center;
-            border: none;
-            outline: none;
-            border-radius: 20px;
-            padding: 10px;
-            right: 20px;
-            top: 20px;
-            border-radius: 50px;
-            filter: drop-shadow(72px 112px 132px rgba(119, 142, 165, 0.4));
-            background: radial-gradient(315.18% 315.18% at -124.11% -101.79%, #B9CCE2 19%, #FFFFFF 77.71%), #E3EDF7;
-            box-shadow: -10px -6px 32px rgba(255, 255, 255, 0.6), 6px 5px 24px rgba(112, 139, 163, 0.28);
-        }
-
-        #i18n:hover {
-            transform: scale(1.1, 1.1);
-        }
-
-        #i18n:active {
-            transform: scale(0.9, 0.9);
+          text-align: center;
         }
 
         #logo {
-            font-family: Gilroy;
-            font-style: normal;
-            font-weight: bolder;
-            font-size: 60px;
-            color: #00ceff;
-            height: auto;
-            width: max-content;
-            display: flex;
+          transform: translateX(-5px);
+          margin: 0 auto;
         }
 
-        .logom {
-            filter: drop-shadow(72px 112px 132px rgba(119, 142, 165, 0.4));
-            margin: 4px;
-            background: #FFF;
-            border-radius: 8px;
-            width: 50px;
-            height: 50px;
+        #VBUP {
+          font-size: 160px;
+        }
+      }
+
+      @media screen and (min-width: 600px) {
+        .col {
+          width: 70%;
         }
 
-        .logom>span {
-            position: relative;
-            top: -25px;
-            right: -12px;
+        body {
+          margin: 20px;
         }
 
-        .inside {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .banner {
+          text-align: center;
         }
 
-        .inside>p {
-            text-align: center;
-            margin: 0 10px 10px 0;
+        #logo {
+          transform: translateX(-5px);
+          margin: 0 auto;
+        }
+      }
+
+      @media screen and (min-width: 800px) {
+        .col {
+          width: 40%;
         }
 
-        @keyframes enterSite {
-            from {
-                filter: blur(90px);
-            }
-
-            to {
-                filter: blur(0px);
-            }
+        body {
+          margin: 50px;
         }
 
-
-        @media screen and (max-width: 600px) {
-
-            /*手机*/
-            .col {
-                width: 100%;
-            }
-
-            body {
-                margin: 5px;
-            }
-
-            .banner {
-                text-align: center;
-            }
-
-            #logo {
-                transform: translateX(-5px);
-                margin: 0 auto;
-            }
+        .banner {
+          text-align: left;
         }
 
-        @media screen and (min-width: 600px) {
-            .col {
-                width: 70%;
-            }
+        #logo {
+          margin: 0;
+        }
+      }
 
-            body {
-                margin: 20px;
-            }
-
-            .banner {
-                text-align: center;
-            }
-
-            #logo {
-                transform: translateX(-5px);
-                margin: 0 auto;
-            }
+      @media screen and (min-width: 1000px) {
+        .col {
+          width: 25%;
         }
 
-        @media screen and (min-width: 1000px) {
-            .col {
-                width: 25%;
-            }
-
-            body {
-                margin: 50px;
-            }
-
-            .banner {
-                text-align: left;
-            }
-
-            #logo {
-                margin: 0;
-            }
+        body {
+          margin: 50px;
         }
+
+        .banner {
+          text-align: left;
+        }
+
+        #logo {
+          margin: 0;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <div class="banner">
-            <div id="logo">
-                <div id="logom1" class="logom"><span>V</span></div>
-                <div id="logom2" class="logom"><span>B</span></div>
-                <div id="logom3" class="logom"><span>U</span></div>
-                <div id="logom4" class="logom"><span>P</span></div>
-            </div>
-            <span>VTuberの音声ボタンコレクション <span id="count"></span></span>
+      <div class="banner">
+        <div id="logo">
+          <div id="logom1" class="logom"><span>V</span></div>
+          <div id="logom2" class="logom"><span>B</span></div>
+          <div id="logom3" class="logom"><span>U</span></div>
+          <div id="logom4" class="logom"><span>P</span></div>
         </div>
-        <div class="grid-container">
-            <div class="row">
-                <div class="col">
-                    <div class="cate">
-
-
-                        <div class="inside" id="hololive">
-                            <p>Hololive(ホロライブ)</p>
-                            <!-- 按钮会生成在这里 -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="cate">
-                        <div class="inside" id="nijisanji">
-                            <p>彩虹社(にじさんじ)</p>
-                            <!-- 按钮会生成在这里 -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="cate">
-                        <div class="inside" id="vivid">
-                            <p>ViViD(ビビッド)</p>
-                            <!-- 按钮会生成在这里 -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="cate">
-                        <div class="inside" id="personal">
-                            <p>个人势(個人勢)/其它(その他)</p>
-                            <!-- 按钮会生成在这里 -->
-                        </div>
-                    </div>
-                </div>
+        <span>VTuberの音声ボタンコレクション <span id="count"></span></span>
+      </div>
+      <div class="grid-container">
+        <div class="row">
+          <div class="col">
+            <div class="cate">
+              <div class="inside" id="hololive">
+                <p>Hololive(ホロライブ)</p>
+                <!-- 按钮会生成在这里 -->
+              </div>
             </div>
+          </div>
+          <div class="col">
+            <div class="cate">
+              <div class="inside" id="nijisanji">
+                <p>彩虹社(にじさんじ)</p>
+                <!-- 按钮会生成在这里 -->
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="cate">
+              <div class="inside" id="vivid">
+                <p>ViViD(ビビッド)</p>
+                <!-- 按钮会生成在这里 -->
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="cate">
+              <div class="inside" id="personal">
+                <p>其它(その他)</p>
+                <!-- 按钮会生成在这里 -->
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="push"></div>
+      </div>
+      <div class="push"></div>
     </div>
     <div id="VBUP">VBUP</div>
     <div class="footer">
-        本网站仅用于收集网址，网址指向的任何网站内容都与本网站无关<br>
-        <!--このWebサイトはURLの収集にのみ使用され、URLが指すWebサイトのコンテンツはこのWebサイトに関連していません<br>-->
-        <div>
-          Powered by
-          <a href="https://github.com/vbup-osc" target="_blank">Voice Button United Studio</a>
-        </div>
-        Thanks：自闭的一只懒猫 & Coceki & 寒いもみじ雪
+      本网站仅用于收集网址，网址指向的任何网站内容都与本网站无关<br />
+      <!--このWebサイトはURLの収集にのみ使用され、URLが指すWebサイトのコンテンツはこのWebサイトに関連していません<br>-->
+      <div>
+        Powered by
+        <a href="https://github.com/vbup-osc" target="_blank"
+          >Voice Button United Studio</a
+        >
+      </div>
+      Thanks：自闭的一只懒猫 & Coceki & 寒いもみじ雪
     </div>
+  </body>
 
-</body>
-
-<script>
-    init()
-</script>
-
+  <script>
+    init();
+  </script>
 </html>
